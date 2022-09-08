@@ -20,8 +20,8 @@
 
 title: A little mathematics
 email: al17344@bristol.ac.uk
-description: A maths blog, with a focus on random matrix theory, statistical mechanics and integrable systems.
-baseurl: "maths_blog"
+description: Alex Little's maths blog. Here I post about my research and stuff that interests me, in particular random matrix theory, statistical mechanics and integrable systems.
+baseurl: /maths_blog
 twitter_username: alittlemaths
 
 show_excerpts: false # set to true to show excerpts on the homepage

@@ -2,7 +2,6 @@
 layout: post
 title:  "Estimating generalised hypergeometric functions"
 date:   2022-08-14 18:50:11 +0100
-categories: jekyll update
 permalink: /hypergeometric/
 katex: True
 ---
@@ -36,7 +35,7 @@ $$\mathbb{E}[| \sigma(X) \cap A |] = \int_A \rho_{N,L}(x) \, dx $$
 
 where $$\sigma(X)$$ is the spectrum of $$X$$, $$A \subset \mathbb{R}$$ is a Lebesgue measurable set and $$\lvert \cdot \rvert$$ denotes cardinality. From this we see that
 
-$$\mathbb{E}[ \sigma(X) \cap \mathbb{R}] = \int_\mathbb{R} \rho_{N,L}(x) \, dx$$
+$$\mathbb{E}[ |\sigma(X) \cap \mathbb{R}|] = \int_\mathbb{R} \rho_{N,L}(x) \, dx$$
 
 gives the expected number of real eigenvalues. [Forrester, Ipsen and Kumar](https://arxiv.org/abs/1708.00967) supply the following exact formula for the spectral density.
 
