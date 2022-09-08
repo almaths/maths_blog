@@ -2,7 +2,6 @@
 layout: post
 title:  "A derivation of the Tracy-Widom distribution by the Hankel composition method"
 date:   2022-09-08 18:50:11 +0100
-categories: jekyll update
 permalink: /tracy-widom/
 katex: True
 ---
