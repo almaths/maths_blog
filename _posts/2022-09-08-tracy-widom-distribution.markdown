@@ -26,7 +26,7 @@ The motivation for studying this is not simply that the GUE is an easy model to 
 
 $$\frac{1}{Z_{V}} e^{- n \mathrm{tr} V(H)} $$
 
-for some entire function $$V$$ which grows sufficiently rapidly at $$\pm \infty$$, e.g. a polynomial. The eigenvalues will asymptotically ($$n \to \infty$$) concentrate on disjoint intervals $$[\alpha_1, \beta_1], \dots , [\alpha_m, \beta_m]$$. The distribution of the extremal eigenvalue at these endpoints $$\alpha_1, \beta_1, \dots, \alpha_m , \beta_m$$ will converge after a suitable rescaling to $$\det(1 - K)_{L^2(t,\infty)}$$. There is a similar universality in the bulk where the "universal" kernel is the sine kernel. The latter was actually discovered first by Jimbo, Miwa, Môri and Sato in 1980 (see [here](https://core.ac.uk/download/pdf/25350076.pdf) for an accessible introduction to this work).
+for some entire function $$V$$ which grows sufficiently rapidly at $$\pm \infty$$, e.g. a polynomial. For generic $$V$$, the eigenvalues will asymptotically ($$n \to \infty$$) concentrate on disjoint intervals $$[\alpha_1, \beta_1], \dots , [\alpha_m, \beta_m]$$; and the distribution of the extremal eigenvalue at these endpoints $$\alpha_1, \beta_1, \dots, \alpha_m , \beta_m$$ will converge after a suitable rescaling, for "typical" $$V$$, to $$\det(1 - K)_{L^2(t,\infty)}$$. There is a similar universality in the bulk where the "universal" kernel is the sine kernel. The latter was actually discovered first by Jimbo, Miwa, Môri and Sato in 1980 (see [here](https://core.ac.uk/download/pdf/25350076.pdf) for an accessible introduction to this work).
 
 <h2>The Connection to Painlevé II</h2>
 
@@ -52,7 +52,7 @@ $$K_t(x,y) = K(x+t,y+t) = \int_t^\infty \mathrm{Ai}(x+s) \mathrm{Ai}(y+s) \, ds$
 
 Then $$F(t)=\det(1-K)_{L^2(t,\infty)} = \det(1-K_t)_{L^2(\mathbb{R}_+)}$$.
 
-**Notation:** We let $$\tau_t$$ be the shift operator, so that $$(\tau_t \phi)(x) = \phi(x+t)$$ and $$D$$ be the derivative operator, $$(D\phi)(x) = \phi^\prime(x)$$. We shall be somewhat careless and not specify not what spaces these operators act on. Let us also denote the Airy function $$\mathrm{Ai} = A$$. $$\triangle$$
+**Notation:** We let $$\tau_t$$ be the shift operator, so that $$(\tau_t \phi)(x) = \phi(x+t)$$ and $$D$$ be the derivative operator, $$(D\phi)(x) = \phi^\prime(x)$$. We shall be somewhat careless and not specify on what spaces these operators act on. Let us also denote the Airy function $$\mathrm{Ai} = A$$. $$\triangle$$
 
 We see that $$\frac{d}{dt} K_t(x,y) = - A(x+t)A(y+t)$$. Thus
 
@@ -120,7 +120,7 @@ $$\frac{d^2}{dt^2} \log F(t) = - q_0(t)^2 $$
 
 $$q_0(t) \approx (\tau_t A)(0) = \mathrm{Ai}(t)$$
 
-This explains the boundary condition. $$\triangle$$
+This explains the boundary condition. This needs to be rigorously justified but is beyond the scope of this post. $$\triangle$$
 
 <h3>Closing up the system</h3>
 
