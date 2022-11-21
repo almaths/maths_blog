@@ -29,7 +29,7 @@ $$
 X = \tilde{U}_1 \tilde{U}_2 \dots \tilde{U}_m
 $$
 
-as $$N,L \to \infty$$ and where $$\frac{L}{N} \to \gamma > 0$$. Define the *spectral density* as the function $$\rho_{N,L} : \mathbb{R} \to [0, \infty)$$ such that
+as $$N,L \to \infty$$ and where $$\frac{L}{N} \to \gamma > 0$$. Define the *real spectral density* as the function $$\rho_{N,L} : \mathbb{R} \to [0, \infty)$$ such that
 
 $$\mathbb{E}[| \sigma(X) \cap A |] = \int_A \rho_{N,L}(x) \, dx $$
 
@@ -37,7 +37,7 @@ where $$\sigma(X)$$ is the spectrum of $$X$$, $$A \subset \mathbb{R}$$ is a Lebe
 
 $$\mathbb{E}[ |\sigma(X) \cap \mathbb{R}|] = \int_\mathbb{R} \rho_{N,L}(x) \, dx$$
 
-gives the expected number of real eigenvalues. [Forrester, Ipsen and Kumar](https://arxiv.org/abs/1708.00967) supply the following exact formula for the spectral density.
+gives the expected number of real eigenvalues. [Forrester, Ipsen and Kumar](https://arxiv.org/abs/1708.00967) supply the following exact formula for the real spectral density.
 
 $$\rho_{N,L}(x)= \int_{[-1,1]} |x-y| w_L(x) w_L(y) f_{N-2,L}(xy) \, dy $$
 
@@ -51,7 +51,7 @@ Then
 
 $$\sum_{k=0}^K a_k^m x^k = \frac{1}{(2\pi i)^{m-1}} \oint_{\Gamma^{m-1}} g_{K}\left( \frac{x}{z_1 \dots z_{m-1}}\right) g_{\infty} (z_1) \dots g_{\infty}(z_{m-1}) \frac{dz_1}{z_1} \dots \frac{dz_{m-1}}{z_{m-1}}$$
 
-where $$\Gamma \subset U \setminus \{ 0 \}$$ is a closed contour enclosing $$0$$. This formula is also valid for $$K = +\infty$$ so long as $$\frac{x}{z_1 \dots z_{m-1}} \in U$$ throughout the contour $\Gamma$.
+where $$\Gamma \subset U \setminus \{ 0 \}$$ is a closed contour enclosing $$0$$. This formula is also valid for $$K = +\infty$$ so long as $$\frac{x}{z_1 \dots z_{m-1}} \in U$$ throughout the contour $$\Gamma$$.
 
 **Proof:** If we expand the product
 
