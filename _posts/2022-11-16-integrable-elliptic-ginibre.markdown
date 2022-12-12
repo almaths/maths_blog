@@ -121,7 +121,7 @@ and our integro-differential equation, when evaluated at $$y =0$$, reduces to Pa
 
 On the other hand, recovering the Gumbel distribution as $$\sigma \to \infty$$ is actually harder and is done in our paper. This is best done by studying the asymptotics of the corresponding Fredholm determinant rather than working with the integro-differential equation. We also look at asymptotics of $$F_\sigma(t)$$ under various scalings of $$t$$ and $$\sigma$$ by means of nonlinear steepest descent techniques.
 
-**Remark:** There is work left to be done here, especially for the left tail $$t \to -\infty$$, since we only obtain asymptotics only in a scaling régime where $$\sigma$$ is very small.
+**Remark:** There is work left to be done here, especially for the left tail $$t \to -\infty$$, since we only obtain asymptotics in a scaling régime where $$\sigma$$ is very small.
 
 <h2>Sketch of proof</h2>
 
@@ -200,7 +200,7 @@ with kernel
 
 $$A(x,x^\prime) = \mathrm{Ai}(x+x^\prime) \sqrt{\psi(x^\prime)}$$
 
-Then clearly $$A A^\ast = N : L^2(t,\infty) \to L^2(t,\infty)$$. A simple calculation shows that $$M_t := A^\ast A : L^2(\mathbb{R}) \to ^2(\mathbb{R})$$ has kernel
+Then clearly $$A A^\ast = N : L^2(t,\infty) \to L^2(t,\infty)$$. A simple calculation shows that $$M_t := A^\ast A : L^2(\mathbb{R}) \to L^2(\mathbb{R})$$ has kernel
 
 $$M_t (x,y) = \sqrt{\psi(x)}\sqrt{\psi(y)} \frac{\mathrm{Ai}(x+t)\mathrm{Ai}^\prime (y+t) - \mathrm{Ai}^\prime (x+t)\mathrm{Ai}(y+t)}{x-y}$$
 
