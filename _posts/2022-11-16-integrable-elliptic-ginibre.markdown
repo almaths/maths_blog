@@ -211,3 +211,47 @@ $$\det(1-N)_{L^2(t,\infty)}= \det(1-M_t)_{L^2(\mathbb{R})}$$
 may be related to a Riemann-Hilbert problem. This then allows for a Deift-Zhou steepest descent analysis.
 
 **Remark:** As a final remark, these factorisations are useful at proving that the corresponding operator is trace class, since one need only show that the factors are respectively Hilbert-Schmidt.
+
+<h3>The bulk of the spectrum (addendum)</h3>
+
+The techniques developed above can be used to derive a similar integro-differential representation for gaps between real parts in the *bulk* of the spectrum (the reader is referred to [our paper on the arXiv](https://arxiv.org/abs/2212.00525) for details). In particular, the correlation kernel in the bulk also satisfies a curious factorisation property. Recall that we are considering the régime where $$\tau_n \to 1$$ and so "the bulk" is approximately the set $$(-2,2)$$.
+
+"Weak non-Hermiticity" in the bulk requires a somewhat different scaling than at the edge. In particular, if $$\lambda_0 \in (-2,2)$$ is the point we're going to "zoom in" on and $$\rho_1(x) = \frac{1}{\pi}\sqrt{\left(1-\frac{x^2}{4}\right)_+}$$, then we must take
+
+$$\tau_n = 1- \frac{1}{n} \left( \frac{\sigma}{\rho_1(\lambda_0)}\right)^2$$
+
+for $$\sigma \geq 0$$. Then, after a suitable rescaling, the point process around the point $$\lambda_0 \in (-2,2)$$ converges to a determinantal point process with kernel given by
+
+$$K_{\mathrm{sin}}^{\sigma}(z_1,z_2) = \frac{1}{\sigma\sqrt{\pi}} e^{-\frac{y_1^2 + y_2^2}{2\sigma^2}} \frac{1}{2\pi}\int_{-\pi}^\pi e^{-(\sigma u)^2} \cos(u(z_1 - \overline{z_2})) \, du$$
+
+where $$y_k = \Im z_k$$ for $$k=1,2$$. This kernel describes a determinantal point process in the plane $$\mathbb{R}^2 \simeq \mathbb{C}$$.
+
+Now let $$J_t = (-t,t)\times \mathbb{R} \subset \mathbb{R}^2$$ and suppose we are interested in the gap probability given by
+
+$$\det(1-K_{\mathrm{sin}}^{\sigma})_{L^2(J_t)}$$
+
+This corresponds to looking at gaps between real parts (note also that the point process is horizontally translation invariant). We now observe the following factorisation. Let
+
+$$A_\sigma : L^2(J_t) \to L^2(-\pi,\pi)$$
+
+with kernel
+
+$$A_\sigma(a,z) = \frac{1}{\sqrt{2\pi^\frac{3}{2}\sigma}} \exp\left(-\frac{y^2}{2\sigma^2} - \frac{1}{2}(\sigma a)^2 - ia \overline{z}\right)$$
+
+A simple calculation then shows that
+
+$$K_{\mathrm{sin}}^{\sigma} = A_\sigma^\ast A_\sigma : L^2(J_t) \to L^2(J_t)$$
+
+But then, by Sylvester's identity, we have
+
+$$\det(1-K_{\mathrm{sin}}^{\sigma})_{L^2(J_t)} = \det(1-A_\sigma A_\sigma^\ast)_{L^2(-\pi,\pi)} = \det(1-S_\sigma^t )_{L^2(-t,t)}$$
+
+where $$S_\sigma^t$$ is a rescaled version of $$A_\sigma A_\sigma^\ast$$ (so that its domain is now $$L^2(-t,t)$$). A simple calculation (see our paper) shows that one can write the kernel of $$S_\sigma^t$$ as
+
+$$S_\sigma^t(a,b) = \int_0^\infty \left[ \Phi\left( \frac{t}{\sigma}(z+1) \right) - \Phi\left( \frac{t}{\sigma}(z-1)\right) \right]\cos(\pi(a-b)z) \, dz$$
+
+This is exactly a *finite temperature sine kernel*. In our paper we show that for any determinantal point process on $$\mathbb{R}$$ with kernel of the form
+
+$$K(a,b) = \int_0^\infty w(z)\cos(\pi(a-b)z) \, dz$$
+
+for $$w: \mathbb{R}_+ \to [0,1)$$ and tending to $$0$$ exponentially fast at $$+\infty$$, the gap probability $$\det(1-K)_{L^2(-t,t)}$$ can be represented in terms of a solution to an *integro-differential Painlevé V equation*. The generalises the famous result of Jimbo-Miwa-Môri-Sato (1980).
