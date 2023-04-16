@@ -15,9 +15,9 @@ for any measurable set $$X \subset \mathbb{C}$$. The "standard" way of obtaining
 **Theorem (Dominated Convergence):** Let $$(\Omega,\Sigma,\mu)$$ be a measure space and let $$\{ f_n \}_{n \in \mathbb{N}}$$ be a sequence of (real or complex valued) measurable functions on $$\Omega$$ converging pointwise $$\mu$$-almost everywhere to $$f$$. Suppose there exists a $$g \in L^1(\Omega,\mu)$$ such that
 
 $$
-\begin{align}
+\begin{aligned}
 \lvert f_n(x) \rvert \leq g(x) & & \text{ for almost every } x \in \Omega \text{ and } \forall n \in \mathbb{N}
-\end{align}
+\end{aligned}
 $$
 
 then
@@ -34,9 +34,9 @@ The difficulty with applying this theorem is to find a suitable "dominating func
 Assume
 
 $$
-\begin{align*}
+\begin{aligned}
 &\int_\Omega f_n \, d\mu =1  & &\forall n \geq 1
-\end{align*}
+\end{aligned}
 $$
 
 and 
@@ -48,10 +48,10 @@ Then for any measurable subset $$X \subset \Omega$$ the sequence $$\int_X f_n \,
 **Proof:** If $$X$$ is measurable then so is $$\Omega \setminus X$$. Thus by the Fatou lemma we have
 
 $$
-\begin{align*}
+\begin{aligned}
 A&:= \liminf_{n\to \infty}\int_{X} f_n \, d\mu - \int_{X} f \, d\mu  \geq 0\\
 B&:= \liminf_{n\to \infty}\int_{\Omega \setminus X} f_n \, d\mu - \int_{\Omega \setminus X} f \, d\mu \geq 0
-\end{align*}
+\end{aligned}
 $$
 
 Thus $$A+B \geq 0$$. But $$A+B \leq 0$$ by our assumptions. Hence $$A+B = 0$$ and hence $$A=B=0$$. Thus $$\liminf_{n\to \infty}\int_{X} f_n \, d\mu = \int_{X} f \, d\mu$$. 
@@ -59,9 +59,9 @@ Thus $$A+B \geq 0$$. But $$A+B \leq 0$$ by our assumptions. Hence $$A+B = 0$$ an
 Now consider a subsequence $$n_k$$ such that $$\int_X  f_{n_k} \, d\mu \to \limsup_{n \to \infty} \int_X  f_{n} \, d\mu$$ as $$k \to \infty$$.  We then have the equalities
 
 $$
-\begin{align*}
+\begin{aligned}
  \limsup_{n \to \infty} \int_X  f_{n} \, d\mu = \lim_{k \to \infty}\int_X  f_{n_k} \, d\mu = \liminf_{k \to \infty}\int_X  f_{n_k} \, d\mu = \int_X  f \, d\mu
-\end{align*}
+\end{aligned}
 $$
 
 Thus $$ \limsup_{n \to \infty} \int_X  f_{n} \, d\mu =  \liminf_{n \to \infty} \int_X  f_{n} \, d\mu = \int_X  f \, d\mu$$. $$\square$$
