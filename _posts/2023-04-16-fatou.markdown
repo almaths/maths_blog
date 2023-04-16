@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "Using Fatou's lemma to avoid the need for a dominating function "
+date:   2023-04-16 13:40:00 +0100
+permalink: /fatou-lemma/
+katex: True
+---
+
+In my [work](https://arxiv.org/abs/2212.00525) with Thomas Bothner on the elliptic Ginibre ensemble we had to prove a theorem of the following kind. We had a sequence of probability densities $$\rho_n : \mathbb{C} \to \mathbb{R}$$ defined on the complex plane, converging *pointwise* to an elliptic law $$\rho$$ as $$n \to +\infty$$. What we would like to prove is that
+
+$$ \int_X \rho_n(z) \, d^2 z \longrightarrow \int_X \rho(z) \, d^2 z $$
+
+for any measurable set $$X \subset \mathbb{C}$$. The "standard" way of obtaining a result like this is to use Lebesgue's Dominated Convergence Theorem. This theorem states the following.
+
+**Theorem (Dominated Convergence):** Let $$(\Omega,\Sigma,\mu)$$ be a measure space and let $$\{ f_n \}_{n \in \mathbb{N}}$$ be a sequence of (real or complex valued) measurable functions on $$\Omega$$ converging pointwise $$\mu$$-almost everywhere to $$f$$. Suppose there exists a $$g \in L^1(\Omega,\mu)$$ such that
+
+$$
+\begin{align}
+\lvert f_n(x) \rvert \leq g(x) & & \text{ for almost every } x \in \Omega \text{ and } \forall n \in \mathbb{N}
+\end{align}
+$$
+
+then
+
+$$\int_\Omega f_n \, d\mu \longrightarrow \int_\Omega f \, d\mu$$
+
+as $$n \to +\infty$$. $$\triangle$$
+
+The difficulty with applying this theorem is to find a suitable "dominating function" $$g \in L^1(\Omega,\mu)$$. In this post I will present a simple lemma that is able to avoid the need to find such a $$g$$. This lemma appears somewhat implicitly in [our paper](https://arxiv.org/abs/2212.00525) from Equations 3.12 to 3.14. I am drawing attention to it since it seems like it would be useful to simplify various proofs; for example, this lemma would have greatly simplified the proofs containing in [my paper](https://arxiv.org/abs/2102.08842) with Mezzadri and Simm on products of truncated orthogonal matrices.
+
+
+**Lemma:** Let $$(\Omega, \Sigma, \mu )$$ be a measure space and let $$\{ f_n \}_{n \in \mathbb{N}}$$ be a sequence of non-negative measurable functions $$f_n :  \Omega \to [0, +\infty]$$ which converges pointwise to $$f(x) := \lim_{n \to \infty} f_n(x) \geq 0$$.
+
+Assume
+
+$$
+\begin{align*}
+&\int_\Omega f_n \, d\mu =1  & &\forall n \geq 1
+\end{align*}
+$$
+
+and 
+
+$$\int_\Omega f \, d\mu =1$$
+
+Then for any measurable subset $$X \subset \Omega$$ the sequence $$\int_X f_n \, d\mu $$ is convergent and converges to $$\int_X f \, d\mu $$. $$\triangle$$
+
+**Proof:** If $$X$$ is measurable then so is $$\Omega \setminus X$$. Thus by the Fatou lemma we have
+
+$$
+\begin{align*}
+A&:= \liminf_{n\to \infty}\int_{X} f_n \, d\mu - \int_{X} f \, d\mu  \geq 0\\
+B&:= \liminf_{n\to \infty}\int_{\Omega \setminus X} f_n \, d\mu - \int_{\Omega \setminus X} f \, d\mu \geq 0
+\end{align*}
+$$
+
+Thus $$A+B \geq 0$$. But $$A+B \leq 0$$ by our assumptions. Hence $$A+B = 0$$ and hence $$A=B=0$$. Thus $$\liminf_{n\to \infty}\int_{X} f_n \, d\mu = \int_{X} f \, d\mu$$. 
+
+Now consider a subsequence $$n_k$$ such that $$\int_X  f_{n_k} \, d\mu \to \limsup_{n \to \infty} \int_X  f_{n} \, d\mu$$ as $$k \to \infty$$.  We then have the equalities
+
+$$
+\begin{align*}
+ \limsup_{n \to \infty} \int_X  f_{n} \, d\mu = \lim_{k \to \infty}\int_X  f_{n_k} \, d\mu = \liminf_{k \to \infty}\int_X  f_{n_k} \, d\mu = \int_X  f \, d\mu
+\end{align*}
+$$
+
+Thus $$ \limsup_{n \to \infty} \int_X  f_{n} \, d\mu =  \liminf_{n \to \infty} \int_X  f_{n} \, d\mu = \int_X  f \, d\mu$$. $$\square$$
+
+Both the statement of the lemma and the proof are sufficiently simple that it is highly likely it is already known in the probability theory/measure theory literature. However not being a probabilist I am not aware of it, so I would be grateful for anyone to send me a reference for such a result.
