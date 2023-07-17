@@ -29,7 +29,7 @@ as $$n \to +\infty$$. $$\triangle$$
 The difficulty with applying this theorem is to find a suitable "dominating function" $$g \in L^1(\Omega,\mu)$$. In this post I will present a simple lemma that is able to avoid the need to find such a $$g$$. This lemma appears somewhat implicitly in [our paper](https://arxiv.org/abs/2212.00525) from Equations 3.12 to 3.14. I am drawing attention to it since it seems like it would be useful to simplify various proofs; for example, this lemma would have greatly simplified the proofs containing in [my paper](https://arxiv.org/abs/2102.08842) with Mezzadri and Simm on products of truncated orthogonal matrices.
 
 
-**Lemma:** Let $$(\Omega, \Sigma, \mu )$$ be a measure space and let $$\{ f_n \}_{n \in \mathbb{N}}$$ be a sequence of non-negative measurable functions $$f_n :  \Omega \to [0, +\infty]$$ which converges pointwise to $$f(x) := \lim_{n \to \infty} f_n(x) \geq 0$$.
+**Lemma:** Let $$(\Omega, \Sigma, \mu )$$ be a measure space and let $$\{ f_n \}_{n \in \mathbb{N}}$$ be a sequence of nonnegative measurable functions $$f_n :  \Omega \to [0, +\infty]$$ which converges pointwise to $$f(x) := \lim_{n \to \infty} f_n(x) \geq 0$$.
 
 Assume
 

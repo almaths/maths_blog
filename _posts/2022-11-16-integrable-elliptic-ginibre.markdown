@@ -61,7 +61,7 @@ The difference is that this density is restricted to the subspace of matrices su
 
 $$\varrho_n(x_1, \dots , x_n) = C^{\prime \prime}_n e^{-\sum_{k=1}^n x_i^2} \prod_{1\leq i < j \leq n }|x_i - x_j|^2 $$
 
-This looks practically identity to the case of Ginibre, but in fact the restriction to $$\mathbb{R}$$ rather than $$\mathbb{C}$$ changes things considerably. As is well known, the 1-point density [converges to a semicircular distribution](https://mathworld.wolfram.com/WignersSemicircleLaw.html). Furthermore, its rightmost eigenvalue asymptotically obeys a [Tracy-Widom (1994)](https://arxiv.org/abs/hep-th/9211141) law. That is
+This looks practically identical to the case of Ginibre, but in fact the restriction to $$\mathbb{R}$$ rather than $$\mathbb{C}$$ changes things considerably. As is well known, the 1-point density [converges to a semicircular distribution](https://mathworld.wolfram.com/WignersSemicircleLaw.html). Furthermore, its rightmost eigenvalue asymptotically obeys a [Tracy-Widom (1994)](https://arxiv.org/abs/hep-th/9211141) law. That is
 
 $$\mathbb{P}\left( \max_{i=1, \dots, n} \lambda_i \leq \sqrt{2n} + \frac{t}{\sqrt{2} n^\frac{1}{6}} \right) \to \exp\left(-\int_t^\infty (s-t) q(s)^2 \, ds\right)$$
 
