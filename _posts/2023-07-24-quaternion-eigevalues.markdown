@@ -81,7 +81,7 @@ Finally, to conclude our discussion, we must give meaning to the notion of *diag
 
 $$M v_k = \lambda_k v_k$$
 
-By self-duality, $$w_k := J \overline{v_k}$$ is also an eigenvector with $$\lambda_k$$. $$w_k$$ and $$v_k$$ are distinct eigenvectors since $$\| w_k \| = 1$$ and $$\langle w_k , v_k \rangle = w_k^\dagger v_k = v_k^\mathsf{T} J v_k = 0$$. Then define the matrix
+By self-duality, $$w_k := J \overline{v_k}$$ is also an eigenvector with $$\lambda_k$$. $$w_k$$ and $$v_k$$ are linearly independent eigenvectors since $$\| w_k \| = 1$$ and $$\langle w_k , v_k \rangle = w_k^\dagger v_k = v_k^\mathsf{T} J v_k = 0$$. Then define the matrix
 
 $$U = \left( \begin{matrix} \vert & \vert &\dots &\vert & \vert \\
 v_1 & w_1 &\dots & v_n & w_n \\
