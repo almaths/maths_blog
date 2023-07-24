@@ -18,8 +18,8 @@ $$e_i e_j = -e_j e_i \quad \text{ for } i \neq j$$
 
 It is convenient to identify these with $$2 \times 2$$ matrices
 
-$$\begin{align*}1 \simeq \mathbb{I} = \left( \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right), & & e_1  \simeq \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right) \\
-e_2  \simeq \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right), & & e_3  \simeq \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right)\end{align*}$$
+$$\begin{aligned}1 \simeq \mathbb{I} = \left( \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right), & & e_1  \simeq \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right) \\
+e_2  \simeq \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right), & & e_3  \simeq \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right)\end{aligned}$$
 
 
 In what follows it will be useful to complexify the quaternions $$\mathbb{H}_{\mathbb{C}}$$ so that for $$Q \in \mathbb{H}_{\mathbb{C}}$$
