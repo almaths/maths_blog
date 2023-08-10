@@ -104,7 +104,7 @@ $$|f_{\infty,L}(-x)| \leq  \frac{1}{  \left( 1 - x^\frac{1}{m} \right)^{m(L+1)}}
 
 Notice that the second estimate is quite good, it differs from the pointwise asymptotics by a $$\mathcal{O}(1)$$ factor.
 
-Let $$g_{N-2}(x) = \sum_{k=0}^{N-2} \binom{L+k}{k}x^k$$. There are a variety integral representations of this, e.g. in terms of an incomplete beta function (see page 3 of [Khoruzhenko, Sommers and Zyczkowski](https://arxiv.org/abs/1008.2075)). If we write the coefficient $$\binom{L+k}{k} = \frac{1}{2\pi i } \oint_{\Gamma} \frac{1}{z^{N-1}(1-z)^{L+1}} \, dz $$ and sum, we find
+Let $$g_{N-2}(x) = \sum_{k=0}^{N-2} \binom{L+k}{k}x^k$$. There are a variety integral representations of this, e.g. in terms of an incomplete beta function (see page 3 of [Khoruzhenko, Sommers and Zyczkowski](https://arxiv.org/abs/1008.2075)). If we write the coefficient $$\binom{L+k}{k} = \frac{1}{2\pi i } \oint_{\Gamma} \frac{1}{z^{k+1}(1-z)^{L+1}} \, dz $$ and sum, we find
 
 $$g_{N-2}(x) = \frac{1}{(1-x)^{L+1}} \chi_{R> |x|} -\frac{x^{N-1 }}{2\pi i} \oint_{|z|=R} \frac{1}{z^{N-1}(1-z)^{L+1}} \frac{dz}{z-x} $$
 
