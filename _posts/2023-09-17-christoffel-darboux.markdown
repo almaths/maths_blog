@@ -92,7 +92,7 @@ $$Y_{N+1}(z,w)_{21} = Y_0(z,w)_{21} - 2\pi i (z-w) \sum_{n=0}^{N-1} \frac{P_n(z)
 
 Then from our solution $$Y_0(z,w)_{21} = 0$$ we find 
 
-$$\boxed{ \sum_{n=0}^{N-1} \frac{P_n(z)P_n(w)}{h_n} = -\frac{1}{2\pi  i} \frac{(X_n(z)^{-1}X_n(w))_{21}}{z-w}}$$
+$$\boxed{ \sum_{n=0}^{N-1} \frac{P_n(z)P_n(w)}{h_n} = -\frac{1}{2\pi  i} \frac{(X_N(z)^{-1}X_N(w))_{21}}{z-w}}$$
 
 which is the Christoffel-Darboux formula.
 
