@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hello and welcome to my blog! I am Alex Little, a postdoctoral research associate in the [probability group](https://www.umpa.ens-lyon.fr/recherche/equipe-de-probabilites) at ENS de Lyon supervised by [Alice Guionnet](http://perso.ens-lyon.fr/aguionne/) and [Karol Kozlowski](http://perso.ens-lyon.fr/karol.kozlowski/home.php). My main interests are in random matrix theory, statistical mechanics, Riemann-Hilbert problems and integrable systems. My email is alexander.little@ens-lyon.fr.
+Hello and welcome to my blog! I am Alex Little, a postdoctoral research associate in the [probability group](https://www.umpa.ens-lyon.fr/recherche/equipe-de-probabilites) at ENS de Lyon supervised by [Alice Guionnet](http://perso.ens-lyon.fr/aguionne/) and [Karol Kozlowski](http://perso.ens-lyon.fr/karol.kozlowski/home.php). My main interests are in random matrix theory, statistical mechanics, Riemann-Hilbert problems and integrable systems. My email is alexander.little (AT) ens-lyon.fr.
 
 My publications can be found on [Google Scholar](https://scholar.google.co.uk/citations?user=-JKoe_EAAAAJ&hl=en) and on arXiv. This blog is used to write about things I find interesting and to give accessible discussions of ideas from papers. To comment on an article please reply to the link posted [on Twitter](https://twitter.com/alittlemaths).
 
