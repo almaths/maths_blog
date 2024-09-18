@@ -88,7 +88,7 @@ $$Y_{n+1}(z,w)_{21} = Y_n(z,w)_{21} - 2\pi i \frac{P_n(z)P_n(w)}{h_n} (z-w) $$
 
 If we now sum both sides from $$n=0$$ to $$n=N-1$$ we find
 
-$$Y_{N+1}(z,w)_{21} = Y_0(z,w)_{21} - 2\pi i (z-w) \sum_{n=0}^{N-1} \frac{P_n(z)P_n(w)}{h_n}  $$
+$$Y_{N}(z,w)_{21} = Y_0(z,w)_{21} - 2\pi i (z-w) \sum_{n=0}^{N-1} \frac{P_n(z)P_n(w)}{h_n}  $$
 
 Then from our solution $$Y_0(z,w)_{21} = 0$$ we find 
 

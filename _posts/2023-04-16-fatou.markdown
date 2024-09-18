@@ -65,5 +65,3 @@ $$
 $$
 
 Thus $$ \limsup_{n \to \infty} \int_X  f_{n} \, d\mu =  \liminf_{n \to \infty} \int_X  f_{n} \, d\mu = \int_X  f \, d\mu$$. $$\square$$
-
-Both the statement of the lemma and the proof are sufficiently simple that it is highly likely it is already known in the probability theory/measure theory literature. However not being a probabilist I am not aware of it, so I would be grateful for anyone to send me a reference for such a result.
