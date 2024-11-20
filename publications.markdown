@@ -4,6 +4,8 @@ title: Publications & Preprints
 permalink: /publications/
 ---
 
+Alice Guionnet, Karol Kozlowski, Alex Little, "Asymptotic expansion of the partition function for β-ensembles with complex potentials," (2024) [arXiv:2411.10610](https://arxiv.org/abs/2411.10610)
+
 Alex Little, "A Riemann-Hilbert approach to skew-orthogonal polynomials of symplectic type," SIGMA 20, 076, (2024) [arXiv:2306.14107](https://arxiv.org/abs/2306.14107)
 
 Thomas Bothner, Alex Little, "The complex elliptic Ginibre ensemble at weak non-Hermiticity: bulk spacing distributions," Journal of Physics A: Mathematical and Theoretical 57(25), (2024) [arXiv:2212.00525](https://arxiv.org/abs/2212.00525)
