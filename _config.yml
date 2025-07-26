@@ -74,6 +74,7 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+ - jekyll-paginate
 
 
 
@@ -99,3 +100,7 @@ kramdown:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Pagination settings
+paginate: 5 # Number of posts per page
+paginate_path: "/blog/page:num/" # Path for pagination pages (e.g., /blog/page2/)
