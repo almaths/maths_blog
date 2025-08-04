@@ -14,34 +14,34 @@ $$e_1^2 = e_2^2 = e_3^2 = -1 $$
 
 $$e_1 e_2 = e_3 \quad \text{ etc. by cyclic permutations}$$
 
-$$e_i e_j = -e_j e_i \quad \text{ for } i \neq j$$
+$$e_i e_j = -e_j e_i \quad \text{ for } i \neq j .$$
 
 It is convenient to identify these with $$2 \times 2$$ matrices
 
 $$\begin{aligned}1 \simeq \mathbb{I} = \left( \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right), & & e_1  \simeq \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right) \\
-e_2  \simeq \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right), & & e_3  \simeq \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right)\end{aligned}$$
+e_2  \simeq \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right), & & e_3  \simeq \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right).\end{aligned}$$
 
 
 In what follows it will be useful to complexify the quaternions $$\mathbb{H}_{\mathbb{C}}$$ so that for $$Q \in \mathbb{H}_{\mathbb{C}}$$
 
-$$Q = q_0 \mathbb{I} + q_1 e_1 + q_2 e_2 + q_3 e_3 \quad (q_i \in \mathbb{C})$$
+$$Q = q_0 \mathbb{I} + q_1 e_1 + q_2 e_2 + q_3 e_3  \quad (q_i \in \mathbb{C}).$$
 
 **Definition:** The *dual* of a quaternion $$Q= q_0 \mathbb{I} + q_1 e_1 + q_2 e_2 + q_3 e_3 \in \mathbb{H}_\mathbb{C}$$ is
 
 
-$$Q^\mathsf{D} = q_0 \mathbb{I} - q_1 e_1 - q_2 e_2 - q_3 e_3$$
+$$Q^\mathsf{D} = q_0 \mathbb{I} - q_1 e_1 - q_2 e_2 - q_3 e_3.$$
 
 Note that $$Q \mapsto Q^\mathsf{D}$$ is a $$\mathbb{C}$$-linear (and not conjugate linear) operation.
 
 **Lemma:** Using our $$2 \times 2$$ matrix representation of a quaternion $$Q \in \mathbb{H}_{\mathbb{C}}$$ we may write the dual
 
-$$Q^\mathsf{D} = -e_2 Q^\mathsf{T} e_2$$
+$$Q^\mathsf{D} = -e_2 Q^\mathsf{T} e_2.$$
 
 **Proof:** Straightfoward calculation. $$\square$$
 
 **Definition:** The *adjoint* of a quaternion $$Q= q_0 \mathbb{I} + q_1 e_1 + q_2 e_2 + q_3 e_3 \in \mathbb{H}_\mathbb{C}$$ is
 
-$$Q^\dagger = \overline{q_0} \mathbb{I} - \overline{q_1} e_1 - \overline{q_2} e_2 - \overline{q_3} e_3$$
+$$Q^\dagger = \overline{q_0} \mathbb{I} - \overline{q_1} e_1 - \overline{q_2} e_2 - \overline{q_3} e_3.$$
 
 Note that $$Q \mapsto Q^\dagger$$ is a conjugate-linear operation and given our matrix representation it is exactly the conjugate transpose of the matrix $$Q$$.
 
@@ -55,7 +55,7 @@ where $$M^\mathsf{D} = - J M^\mathsf{T}J$$ for $$J = \underbrace{e_2 \oplus \dot
 
 **Remark:** Define the non-degenerate skew-symmetric bilinear form $$\Omega : \mathbb{C}^{2n} \times \mathbb{C}^{2n} \to \mathbb{C}$$ by
 
-$$\Omega(x,y) = x^\mathsf{T} J y$$
+$$\Omega(x,y) = x^\mathsf{T} J y .$$
 
 Then $$M = M^\mathsf{D}$$ is equivalent to $$\Omega(Mx,y) = \Omega(x,My)$$ for all $$x,y \in \mathbb{C}^{2n}$$. $$\triangle$$
 
@@ -73,7 +73,7 @@ for $$\zeta \in \mathbb{C}$$ and $$\mathrm{pf}$$ being the Pfaffian. Here we hav
 
 **Remark:** Many works, including e.g. the textbooks of M. L. Mehta (*Random Matrices*) and P. Forrester (*Log-Gases and Random Matrices*), prefer to work with a so-called "quaternion determinant." Given a self-dual $$n \times n$$ quaternion matrix $$\mathcal{M}$$ with $$2n \times 2n$$ representative $$M$$, we define the *quaternion determinant*
 
-$$\mathrm{Qdet}(\mathcal{M}) = \mathrm{pf}(JM)$$
+$$\mathrm{Qdet}(\mathcal{M}) = \mathrm{pf}(JM) .$$
 
 Surprisingly, there is a theorem due Dyson (see Theorem 5.1.2 of Mehta's textbook) that shows that $$\mathrm{Qdet}$$ admits a Laplace-type formula in terms of a sum over permutations (ibid, Equation 5.1.5). All of this presumes that the matrix $$M$$ is self-dual, as far as I understand $$\mathrm{Qdet}$$ is not defined for non-self-dual matrices. $$\triangle$$
 
@@ -85,7 +85,7 @@ By self-duality, $$w_k := J \overline{v_k}$$ is also an eigenvector with $$\lamb
 
 $$U = \left( \begin{matrix} \vert & \vert &\dots &\vert & \vert \\
 v_1 & w_1 &\dots & v_n & w_n \\
-\vert & \vert &\dots &\vert & \vert \end{matrix} \right)$$
+\vert & \vert &\dots &\vert & \vert \end{matrix} \right).$$
 
 From the construction it is clear that
 

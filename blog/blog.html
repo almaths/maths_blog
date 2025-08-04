@@ -1,6 +1,9 @@
 ---
 layout: default
 title: Blog Posts
+permalink: /blog/
+pagination:
+  enabled: true
 ---
 
 <div class="home">
@@ -9,11 +12,7 @@ title: Blog Posts
   {%- endif -%}
 
   <div class="blog-posts-list">
-      {% if site.paginate %}
       {% assign posts = paginator.posts %}
-      {% else %}
-      {% assign posts = site.posts %}
-      {% endif %}
 
       {%- if posts.size > 0 -%}
           {%- if page.list_title -%}
@@ -36,7 +35,7 @@ title: Blog Posts
           {%- endfor -%}
           </ul>
 
-          {% if site.paginate %}
+        
           <div class="pager">
               <ul class="pagination">
               {%- if paginator.previous_page %}
@@ -52,7 +51,7 @@ title: Blog Posts
               {%- endif %}
               </ul>
           </div>
-          {%- endif %}
+          
 
       {%- endif -%}
   </div>

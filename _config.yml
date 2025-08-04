@@ -65,8 +65,10 @@ minima:
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.md
+header_pages:
+  - index.markdown
+  - blog.html
+  - publications.markdown
 
 # Build settings
 theme: minima
@@ -74,7 +76,7 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
- - jekyll-paginate
+ - jekyll-paginate-v2
 
 
 
@@ -102,5 +104,10 @@ kramdown:
 #   - vendor/ruby/
 
 # Pagination settings
-paginate: 5 # Number of posts per page
-paginate_path: "/blog/page:num/" # Path for pagination pages (e.g., /blog/page2/)
+# This is the new configuration for jekyll-paginate-v2
+pagination:
+  enabled: true
+  per_page: 5
+  path: '/blog/page/:num/'
+  sort_field: 'date'
+  sort_reverse: true

@@ -8,7 +8,7 @@ katex: True
 
 In my [work](https://arxiv.org/abs/2212.00525) with Thomas Bothner on the elliptic Ginibre ensemble we had to prove a theorem of the following kind. We had a sequence of probability densities $$\rho_n : \mathbb{C} \to \mathbb{R}$$ defined on the complex plane, converging *pointwise* to an elliptic law $$\rho$$ as $$n \to +\infty$$. What we would like to prove is that
 
-$$ \int_X \rho_n(z) \, d^2 z \longrightarrow \int_X \rho(z) \, d^2 z $$
+$$ \int_X \rho_n(z) \, \mathrm{d}^2 z \longrightarrow \int_X \rho(z) \, \mathrm{d}^2 z $$
 
 for any measurable set $$X \subset \mathbb{C}$$. The "standard" way of obtaining a result like this is to use Lebesgue's Dominated Convergence Theorem. This theorem states the following.
 
@@ -22,7 +22,7 @@ $$
 
 then
 
-$$\int_\Omega f_n \, d\mu \longrightarrow \int_\Omega f \, d\mu$$
+$$\int_\Omega f_n \, \mathrm{d}\mu \longrightarrow \int_\Omega f \, \mathrm{d}\mu$$
 
 as $$n \to +\infty$$. $$\triangle$$
 
@@ -35,33 +35,33 @@ Assume
 
 $$
 \begin{aligned}
-&\int_\Omega f_n \, d\mu =1  & &\forall n \geq 1
+&\int_\Omega f_n \, \mathrm{d}\mu =1  & &\forall n \geq 1
 \end{aligned}
 $$
 
 and 
 
-$$\int_\Omega f \, d\mu =1$$
+$$\int_\Omega f \, \mathrm{d}\mu =1$$
 
-Then for any measurable subset $$X \subset \Omega$$ the sequence $$\int_X f_n \, d\mu $$ is convergent and converges to $$\int_X f \, d\mu $$. $$\triangle$$
+Then for any measurable subset $$X \subset \Omega$$ the sequence $$\int_X f_n \, \mathrm{d}\mu $$ is convergent and converges to $$\int_X f \, \mathrm{d}\mu $$. $$\triangle$$
 
 **Proof:** If $$X$$ is measurable then so is $$\Omega \setminus X$$. Thus by the Fatou lemma we have
 
 $$
 \begin{aligned}
-A&:= \liminf_{n\to \infty}\int_{X} f_n \, d\mu - \int_{X} f \, d\mu  \geq 0\\
-B&:= \liminf_{n\to \infty}\int_{\Omega \setminus X} f_n \, d\mu - \int_{\Omega \setminus X} f \, d\mu \geq 0
+A&:= \liminf_{n\to \infty}\int_{X} f_n \, \mathrm{d}\mu - \int_{X} f \, \mathrm{d}\mu  \geq 0,\\
+B&:= \liminf_{n\to \infty}\int_{\Omega \setminus X} f_n \, \mathrm{d}\mu - \int_{\Omega \setminus X} f \, \mathrm{d}\mu \geq 0.
 \end{aligned}
 $$
 
-Thus $$A+B \geq 0$$. But $$A+B \leq 0$$ by our assumptions. Hence $$A+B = 0$$ and hence $$A=B=0$$. Thus $$\liminf_{n\to \infty}\int_{X} f_n \, d\mu = \int_{X} f \, d\mu$$. 
+Thus $$A+B \geq 0$$. But $$A+B \leq 0$$ by our assumptions. Hence $$A+B = 0$$ and hence $$A=B=0$$. Thus $$\liminf_{n\to \infty}\int_{X} f_n \, \mathrm{d}\mu = \int_{X} f \, \mathrm{d}\mu$$. 
 
-Now consider a subsequence $$n_k$$ such that $$\int_X  f_{n_k} \, d\mu \to \limsup_{n \to \infty} \int_X  f_{n} \, d\mu$$ as $$k \to \infty$$.  We then have the equalities
+Now consider a subsequence $$n_k$$ such that $$\int_X  f_{n_k} \, \mathrm{d}\mu \to \limsup_{n \to \infty} \int_X  f_{n} \, \mathrm{d}\mu$$ as $$k \to \infty$$.  We then have the equalities
 
 $$
 \begin{aligned}
- \limsup_{n \to \infty} \int_X  f_{n} \, d\mu = \lim_{k \to \infty}\int_X  f_{n_k} \, d\mu = \liminf_{k \to \infty}\int_X  f_{n_k} \, d\mu = \int_X  f \, d\mu
+ \limsup_{n \to \infty} \int_X  f_{n} \, \mathrm{d}\mu = \lim_{k \to \infty}\int_X  f_{n_k} \, \mathrm{d}\mu = \liminf_{k \to \infty}\int_X  f_{n_k} \, \mathrm{d}\mu = \int_X  f \, \mathrm{d}\mu.
 \end{aligned}
 $$
 
-Thus $$ \limsup_{n \to \infty} \int_X  f_{n} \, d\mu =  \liminf_{n \to \infty} \int_X  f_{n} \, d\mu = \int_X  f \, d\mu$$. $$\square$$
+Thus $$ \limsup_{n \to \infty} \int_X  f_{n} \, \mathrm{d}\mu =  \liminf_{n \to \infty} \int_X  f_{n} \, \mathrm{d}\mu = \int_X  f \, \mathrm{d}\mu$$. $$\square$$
