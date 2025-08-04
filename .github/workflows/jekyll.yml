@@ -5,7 +5,7 @@ name: Deploy Jekyll Site to Pages
 on:
   push:
     branches:
-      - main  # or master, depending on your default branch
+      - gh-pages  # or master, depending on your default branch
 
 jobs:
   build:
