@@ -98,7 +98,7 @@ which is the Christoffel-Darboux formula.
 
 **Remark:** This way of writing the Christoffel-Darboux formula mirrors nicely with what happens for $$\beta = 4$$. Here the relevant quantity that encodes eigenvalue correlation functions is the "pre-kernel," written as a sum over *skew-orthogonal polynomials*. Namely,
 
-$$\sum_{k=0}^{n-1} \frac{ P_{2k}(x) e^{-V(x)} \frac{\mathrm{d}}{\mathrm{d}y}\left( P_{2k+1}(y) e^{-V(y)} \right) - P_{2k+1}(x) e^{-V(x)} \frac{\mathrm{d}}{\mathrm{d}y}\left( P_{2k}(y) e^{-V(y)} \right)}{2 h_k} $$
-$$= - \frac{e^{-V(x)-V(y)}}{4\pi i} \frac{(A_n(x)^{-1}A_n(y))_{21}}{x-y}$$
+$$\sum_{k=0}^{n-1} \frac{ P_{2k}(x) \mathrm{e}^{-V(x)} \frac{\mathrm{d}}{\mathrm{d}y}\left( P_{2k+1}(y) \mathrm{e}^{-V(y)} \right) - P_{2k+1}(x) \mathrm{e}^{-V(x)} \frac{\mathrm{d}}{\mathrm{d}y}\left( P_{2k}(y) \mathrm{e}^{-V(y)} \right)}{2 h_k} $$
+$$= - \frac{\mathrm{e}^{-V(x)-V(y)}}{4\pi i} \frac{(A_n(x)^{-1}A_n(y))_{21}}{x-y}$$
 
 where $$P_k$$ is the $$k$$th monic skew-orthogonal polynomial, $$h_k$$ is the skew-norm, and $$A_n$$ is a Riemann-Hilbert problem introduced in my [recent paper](https://arxiv.org/abs/2306.14107).
