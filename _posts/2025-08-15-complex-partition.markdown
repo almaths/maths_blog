@@ -6,7 +6,7 @@ permalink: /complex-partition/
 katex: True
 ---
 
-The blog post will be an accessible introduction to my recent paper, joint with A. Guionnet and K. Kozlowski, [Asymptotic expansion of the partition function for β-ensembles with complex potentials](https://arxiv.org/abs/2411.10610). This post is based off presentations I have given of this paper. However because of time constraints many "tricks" from the paper are left out from the presentation. This post gives me the opportunity to explain such tricks.
+The blog post will be an accessible introduction to my recent paper, joint with A. Guionnet and K. Kozlowski, [Asymptotic expansion of the partition function for β-ensembles with complex potentials](https://arxiv.org/abs/2411.10610). This post is based on presentations I have given of this paper. However because of time constraints many "tricks" from the paper are left out from the presentation. This post gives me the opportunity to explain such tricks.
 
 <h2>Real integrals</h2>
 
@@ -22,7 +22,7 @@ Then, in particular, we have
 
 $$\limsup_{N \to +\infty} \frac{\ln I_N}{N} \leq \sup_{[a,b]}\varphi \, .$$
 
-In fact, the limit exists and we actually have equality here. To see this, observe that, by continuity of $$\varphi$$, for any $$\epsilon > 0$$ there must exist a subinterval $$J_\epsilon \subset I$$, of positive length $$ \lvert J_\epsilon \rvert  > 0$$, such that $$\sup_{[a,b]}\varphi \leq \varphi(x) + \epsilon$$ for all $$x \in J_\epsilon$$. Then we have 
+In fact, the limit exists and we actually have equality here. To see this, observe that, by continuity of $$\varphi$$, for any $$\epsilon > 0$$ there must exist a subinterval $$J_\epsilon \subset [a,b]$$, of positive length $$ \lvert J_\epsilon \rvert  > 0$$, such that $$\sup_{[a,b]}\varphi \leq \varphi(x) + \epsilon$$ for all $$x \in J_\epsilon$$. Then we have 
 
 $$I_N \geq \int_{J_\epsilon} \mathrm{e}^{N \varphi(x)}\, \mathrm{d}x \geq |J_\epsilon| \,  \mathrm{e}^{N \sup_{[a,b]}\varphi - N \epsilon} \, .$$
 
@@ -50,7 +50,7 @@ Taylor expanding $$(\psi^{-1})^\prime$$ at $$0$$ and integrating term by term (a
 
 $$I_N \sim \sqrt{\frac{2\pi}{-N \varphi^{\prime \prime}(x^\ast)}} \mathrm{e}^{N \varphi(x^\ast)} \left( 1+ \frac{A_1}{N} + \frac{A_2}{N^2} + \dots \right) \, .$$
 
-Note that that we obtain an asymptotic series in $$\frac{1}{N}$$ because all the odd integrals vanish. This is the *Laplace method* in brief.
+Note that we obtain an asymptotic series in $$\frac{1}{N}$$ because all the odd integrals vanish. This is the *Laplace method* in brief.
 
 **Remark:** Note that we have a kind of "central limit theorem" happening inside the integral, where if we think of the integrand as representing a distribution function, then $$\sqrt{N}(x - x^\ast)$$ is asymptotically Gaussian with mean $$0$$ and variance $$\frac{1}{\sqrt{-  \varphi^{\prime \prime}(x^\ast)}}$$. 
 
@@ -82,11 +82,11 @@ A β-ensemble is a random collection of $$N$$ particles on the real line, $$x_1,
 
 $$\varrho_N(x_1, \dots, x_N) = \frac{1}{\mathsf{Z}_N[V]} \prod_{1 \leq i < j \leq N}|x_i - x_j|^\beta \prod_{k=1}^N \mathrm{e}^{-N \beta V(x_k)}\, .$$
 
-$$\mathsf{Z}_N[V]$$ is a normalisation constant know as the *partition function*,
+$$\mathsf{Z}_N[V]$$ is a normalisation constant known as the *partition function*,
 
-$$\mathsf{Z}_N[V] \overset{\mathrm{def}}{=} \int_{\mathbb{R}^N} \prod_{1 \leq i < j \leq N}|x_i - x_j|^\beta \prod_{k=1}^N \mathrm{e}^{-N \beta V(x_k)}\, \mathrm{d}x . $$
+$$\mathsf{Z}_N[V] \overset{\mathrm{def}}{=} \int_{\mathbb{R}^N} \prod_{1 \leq i < j \leq N}|x_i - x_j|^\beta \prod_{k=1}^N \mathrm{e}^{-N \beta V(x_k)}\, \mathrm{d}\boldsymbol{x} . $$
 
-$$\beta$$ is a fixed positive parameter, which can be interpreteted as the inverse of the "temperature" $$\beta = \frac{1}{T} > 0$$. This is because $$\varrho_N$$ can be interpreted as the thermal distribution of $$N$$ particles with Hamiltonian
+$$\beta$$ is a fixed positive parameter, which can be interpreted as the inverse of the "temperature" $$\beta = \frac{1}{T} > 0$$. This is because $$\varrho_N$$ can be interpreted as the thermal distribution of $$N$$ particles with Hamiltonian
 
 $$\mathcal{H}(x_1, \dots, x_N) = \sum_{1 \leq i < j \leq N} \ln \frac{1}{|x_i - x_j|} + N \sum_{k=1}^N V(x_k)\, .$$
 
@@ -98,7 +98,7 @@ $$L_N^{(\mathbf{x})} = \frac{1}{N} \sum_{k=1}^N \delta_{x_k} \, .$$
 
 Then 
 
-$$\mathsf{Z}_N[V] = \int_{\mathbb{R}^N} \exp\left( - \frac{\beta N^2}{2}\int_{\substack{\mathbb{R}^2 \\ x \neq y}} \ln \frac{1}{|x-y|} \, \mathrm{d}L_N^{(\mathbf{x})}(x) \otimes \mathrm{d}L_N^{(\mathbf{x})}(y) - \beta N^2 \int_{\mathbb{R}} V(x) \, \mathrm{d}L_N^{(\mathbf{x})}(x) \right)\, \mathrm{d}x . $$
+$$\mathsf{Z}_N[V] = \int_{\mathbb{R}^N} \exp\left( - \frac{\beta N^2}{2}\int_{\substack{\mathbb{R}^2 \\ x \neq y}} \ln \frac{1}{|x-y|} \, \mathrm{d}L_N^{(\mathbf{x})}(x) \otimes \mathrm{d}L_N^{(\mathbf{x})}(y) - \beta N^2 \int_{\mathbb{R}} V(x) \, \mathrm{d}L_N^{(\mathbf{x})}(x) \right)\, \mathrm{d}\boldsymbol{x} . $$
 
 We remark that $$\{ L_N^{(\mathbf{x})} \}_{\substack{\mathbf{x \in \mathbb{R}^N} \\ N \geq 1}}$$ forms a dense subset of $$\mathcal{M}_1(\mathbb{R})$$, the space of Borel probability measures on $$\mathbb{R}$$. Thus if we ignore the diagonal we expect that 
 
@@ -130,11 +130,11 @@ Finally, what conditions should we put on $$\Gamma$$?
 
 (3) There exists an $$R > 0$$ sufficiently large so that
 
-$$\Gamma \setminus D_R(0) = \mathrm{e}^{\frac{2\pi i \alpha}{\kappa}} [R,+\infty) \cup \mathrm{e}^{\frac{2\pi i \alpha^\prime}{\kappa}} [R,+\infty)$$
+$$\Gamma \setminus D_R(0) = \mathrm{e}^{\frac{2\pi \mathrm{i} \alpha}{\kappa}} [R,+\infty) \cup \mathrm{e}^{\frac{2\pi \mathrm{i} \alpha^\prime}{\kappa}} [R,+\infty)$$
 
-where $$D_R(0)$$ is the open disk of radius $$R$$ centred at $$0$$. We require incoming orientation on $$\mathrm{e}^{\frac{2\pi i \alpha}{\kappa}} [R,+\infty)$$ and outgoing orientation on $$\mathrm{e}^{\frac{2\pi i \alpha^\prime}{\kappa}} [R,+\infty)$$. $$\triangle$$
+where $$D_R(0)$$ is the open disk of radius $$R$$ centred at $$0$$. We require incoming orientation on $$\mathrm{e}^{\frac{2\pi \mathrm{i} \alpha}{\kappa}} [R,+\infty)$$ and outgoing orientation on $$\mathrm{e}^{\frac{2\pi \mathrm{i} \alpha^\prime}{\kappa}} [R,+\infty)$$. $$\triangle$$
 
-This means that outside a large compact set $$\Gamma$$ consists of two parts: an incoming ray and an outgoing ray, and these rays should lie along the line proportional to a $$\kappa$$th root of unity. A curve that satisfies all of the above is said to be "admissible." These properties mean that $$\lvert \mathrm{e}^{- V(z)}\rvert \to 0$$ rapidly along these rays. We could, of course, be less restrictive and allow contours that run "close" to the rays $$\mathrm{e}^{\frac{2\pi i \alpha}{\kappa}} \mathbb{R}_+ \cup \mathrm{e}^{\frac{2\pi i \alpha^\prime}{\kappa}} \mathbb{R}_+$$, however what happens outside of a sufficiently large compact set will make no contribution to the asymptotic series, and we can also deform our contour to lie exactly upon these rays. Thus we should really think of $$\mathcal{Z}_{N , \Gamma}[V]$$ as being a function of the homotopy class of $$\Gamma$$, which is labelled by $$(\alpha, \alpha^\prime)$$. Note that if we took $$\alpha = \alpha^\prime$$ then $$\mathcal{Z}_{N , \Gamma}[V] = 0$$, hence we exclude this trivial case.
+This means that outside a large compact set $$\Gamma$$ consists of two parts: an incoming ray and an outgoing ray, and these rays should lie along the line proportional to a $$\kappa$$th root of unity. A curve that satisfies all of the above is said to be "admissible." These properties mean that $$\lvert \mathrm{e}^{- V(z)}\rvert \to 0$$ rapidly along these rays. We could, of course, be less restrictive and allow contours that run "close" to the rays $$\mathrm{e}^{\frac{2\pi \mathrm{i} \alpha}{\kappa}} \mathbb{R}_+ \cup \mathrm{e}^{\frac{2\pi \mathrm{i} \alpha^\prime}{\kappa}} \mathbb{R}_+$$, however what happens outside of a sufficiently large compact set will make no contribution to the asymptotic series, and we can also deform our contour to lie exactly upon these rays. Thus we should really think of $$\mathcal{Z}_{N , \Gamma}[V]$$ as being a function of the homotopy class of $$\Gamma$$, which is labelled by $$(\alpha, \alpha^\prime)$$. Note that if we took $$\alpha = \alpha^\prime$$ then $$\mathcal{Z}_{N , \Gamma}[V] = 0$$, hence we exclude this trivial case.
 
 **Remark:** Note that interchanging $$\alpha$$ and $$\alpha^\prime$$ changes $$\mathcal{Z}_{N , \Gamma}[V]$$ by a factor of $$(-1)^N$$. $$\triangle$$
 
@@ -168,7 +168,7 @@ wherever this makes sense. Of course, if $$z \not\in \mathrm{supp}\, \mu$$ and $
 
 (2) Similarly, define the Cauchy transform of probability $$\mu$$
 
-$$C[\mu](z) \overset{\mathrm{def}}{=} \frac{1}{2\pi i} \int_{\mathbb{C}} \frac{1}{w-z} \, \mathrm{d}\mu(w)$$
+$$C[\mu](z) \overset{\mathrm{def}}{=} \frac{1}{2\pi \mathrm{i}} \int_{\mathbb{C}} \frac{1}{w-z} \, \mathrm{d}\mu(w)$$
 
 wherever this makes sense.
 
@@ -190,15 +190,15 @@ $$R(z) = ( V^\prime(z) + 2 \pi i \, C[\mu^{\Gamma_{\mathrm{eq}}}](z))^2 \, .$$
 
 4) $$\mathrm{supp} \, \mu^{\Gamma_{\mathrm{eq}}}$$ consists of critical trajectories of the quadratic differential $$ - R(z)\, \mathrm{d}z^2 $$. $$\triangle$$
 
-**Remark:** 1) Taking the square root we find $$\sqrt{R(z)} = V^\prime(z) + 2\pi i \, C[\mu^{\Gamma_{\mathrm{eq}}}](z)$$. The left hand side is analytic everwhere except on its branch cuts. The right hand side is analytic everywhere except on the support of $$\mu^{\Gamma_{\mathrm{eq}}}$$. Hence the branch cuts of $$\sqrt{R(z)}$$ are the support of the equilibrium measure.
+**Remark:** 1) Taking the square root we find $$\sqrt{R(z)} = V^\prime(z) + 2\pi \mathrm{i} \, C[\mu^{\Gamma_{\mathrm{eq}}}](z)$$. The left hand side is analytic everywhere except on its branch cuts. The right hand side is analytic everywhere except on the support of $$\mu^{\Gamma_{\mathrm{eq}}}$$. Hence the branch cuts of $$\sqrt{R(z)}$$ are the support of the equilibrium measure.
 
-2) By Plemelj's formula we have $$\frac{1}{i \pi } \sqrt{R(z)} \, \mathrm{d}z = \mathrm{d}\mu^{\Gamma_{\mathrm{eq}}}(z) > 0$$ whenever the density is positive. Squaring both sides (which amounts to ignoring the orientation of the contour) we find $$\mathrm{supp} \, \mu^{\Gamma_{\mathrm{eq}}}$$ is a critical trajectory of $$ - R(z)\, \mathrm{d}z^2 $$.
+2) By Plemelj's formula we have $$\frac{1}{\mathrm{i} \pi } \sqrt{R(z)} \, \mathrm{d}z = \mathrm{d}\mu^{\Gamma_{\mathrm{eq}}}(z) > 0$$ whenever the density is positive. Squaring both sides (which amounts to ignoring the orientation of the contour) we find $$\mathrm{supp} \, \mu^{\Gamma_{\mathrm{eq}}}$$ is a critical trajectory of $$ - R(z)\, \mathrm{d}z^2 $$.
 
 3) From the fact that $$\sqrt{R(z)}$$ changes sign across the branch cut we have $$\sqrt{R(z)}_+ + \sqrt{R(z)}_- = 0$$. This gives
 
 $$V^\prime(z) + \mathrm{p.v.}\int \frac{1}{w-z} \, \mathrm{d}\mu^{\Gamma_{\mathrm{eq}}}(w) = 0, \quad \quad \quad z \in \mathrm{supp} \, \mu^{\Gamma_{\mathrm{eq}}} \, .$$
 
-This equation can be regarded as a kind of "complexified" Euler-Lagrange equation, since taking its perpendicular to the contour one obtains the Euler-Lagrange and $$S$$-curve conditions. This again supports the interpretation of an ∞-dimensional saddle point, since it is analogous to the saddle point equation $$\varphi^\prime(z) = 0$$, which can also be broken down into two components representing the maximum along the curve and the minimum perpendicular to the curve.
+This equation can be regarded as a kind of "complexified" Euler-Lagrange equation, since taking its components perpendicular and parallel to the contour one obtains the Euler-Lagrange and $$S$$-curve conditions. This again supports the interpretation of an ∞-dimensional saddle point, since it is analogous to the saddle point equation $$\varphi^\prime(z) = 0$$, which can also be broken down into two components representing the maximum along the curve and the minimum perpendicular to the curve.
 
 The Euler-Lagrange condition for the minimisation of the energy on the curve states that there is a constant $$C_\varphi$$ such that $$\varphi(z) + U[\mu^{\Gamma_{\mathrm{eq}}}](z) \geq C_\varphi$$ throughout the curve, with equality when $$z \in \mathrm{supp} \, \mu^{\Gamma_{\mathrm{eq}}}$$. Hence let us define the *effective potential* as
 

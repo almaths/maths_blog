@@ -6,6 +6,8 @@ permalink: /fatou-lemma/
 katex: True
 ---
 
+[*Update, 20th February 2025:*  After linking this blog post to Google Gemini, I was informed that in fact this result is already known under the title of [Scheffé's lemma](https://en.wikipedia.org/wiki/Scheff%C3%A9%27s_lemma).]
+
 In my [work](https://arxiv.org/abs/2212.00525) with Thomas Bothner on the elliptic Ginibre ensemble we had to prove a theorem of the following kind. We had a sequence of probability densities $$\rho_n : \mathbb{C} \to \mathbb{R}$$ defined on the complex plane, converging *pointwise* to an elliptic law $$\rho$$ as $$n \to +\infty$$. What we would like to prove is that
 
 $$ \int_X \rho_n(z) \, \mathrm{d}^2 z \longrightarrow \int_X \rho(z) \, \mathrm{d}^2 z $$
@@ -26,7 +28,7 @@ $$\int_\Omega f_n \, \mathrm{d}\mu \longrightarrow \int_\Omega f \, \mathrm{d}\m
 
 as $$n \to +\infty$$. $$\triangle$$
 
-The difficulty with applying this theorem is to find a suitable "dominating function" $$g \in L^1(\Omega,\mu)$$. In this post I will present a simple lemma that is able to avoid the need to find such a $$g$$. This lemma appears somewhat implicitly in [our paper](https://arxiv.org/abs/2212.00525) from Equations 3.12 to 3.14. I am drawing attention to it since it seems like it would be useful to simplify various proofs; for example, this lemma would have greatly simplified the proofs containing in [my paper](https://arxiv.org/abs/2102.08842) with Mezzadri and Simm on products of truncated orthogonal matrices.
+The difficulty with applying this theorem is to find a suitable "dominating function" $$g \in L^1(\Omega,\mu)$$. In this post I will present a simple lemma that is able to avoid the need to find such a $$g$$. This lemma appears somewhat implicitly in [our paper](https://arxiv.org/abs/2212.00525) from Equations 3.12 to 3.14. I am drawing attention to it since it seems like it would be useful to simplify various proofs; for example, this lemma would have greatly simplified the proofs contained in [my paper](https://arxiv.org/abs/2102.08842) with Mezzadri and Simm on products of truncated orthogonal matrices.
 
 
 **Lemma:** Let $$(\Omega, \Sigma, \mu )$$ be a measure space and let $$\{ f_n \}_{n \in \mathbb{N}}$$ be a sequence of nonnegative measurable functions $$f_n :  \Omega \to [0, +\infty]$$ which converges pointwise to $$f(x) := \lim_{n \to \infty} f_n(x) \geq 0$$.

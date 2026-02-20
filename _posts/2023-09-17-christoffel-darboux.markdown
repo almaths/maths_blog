@@ -21,7 +21,7 @@ We let $$h_n = \int_\mathbb{R} P_n(x)x^n w(x)\, \mathrm{d}x$$ be the (squared) $
 Find a matrix valued function $$X_n : \mathbb{C} \setminus \mathbb{R} \to \mathbb{C}^{2 \times 2}$$ such that
 
 1. $$X_n$$ is analytic (entry-wise) on $$\mathbb{C} \setminus \mathbb{R}$$.
-2. $$X_n$$ has continuous non-tangential boundary values up to $$\mathbb{R}$$ from above ($$+$$) and below ($$-$$). We label these $$X_n^\pm (x) = \lim_{\epsilon \downarrow 0} X_n(x\pm i \epsilon)$$ for $$ x \in \mathbb{R}$$.
+2. $$X_n$$ has continuous non-tangential boundary values up to $$\mathbb{R}$$ from above ($$+$$) and below ($$-$$). We label these $$X_n^\pm (x) = \lim_{\epsilon \downarrow 0} X_n(x\pm \mathrm{i} \epsilon)$$ for $$ x \in \mathbb{R}$$.
 3. These boundary values are related by the jump condition
 $$X_n^+(x) = X_n^-(x) \left( \begin{matrix} 1 & w(x) \\ 0 & 1\end{matrix} \right)$$
 4. Finally, $$X_n$$ is normalised at infinity by the scaling as $$z \to \infty$$
@@ -30,11 +30,11 @@ $$X_n(z) = \left( \mathbb{I}+\mathcal{O}(z^{-1}) \right) \left( \begin{matrix} z
 
 **Proposition:** The above RHP has a unique solution given by (for $$n\geq 1$$)
 
-$$ X_n(z) = \left( \begin{matrix} P_n(z) & C_\mathbb{R} \left( P_n w\right)(z) \\ - 2\pi i h_{n-1}^{-1} P_{n-1}(z) & - 2\pi i h_{n-1}^{-1} C_\mathbb{R} \left( P_{n-1} w\right)(z) \end{matrix} \right)$$
+$$ X_n(z) = \left( \begin{matrix} P_n(z) & C_\mathbb{R} \left( P_n w\right)(z) \\ - 2\pi \mathrm{i} h_{n-1}^{-1} P_{n-1}(z) & - 2\pi \mathrm{i} h_{n-1}^{-1} C_\mathbb{R} \left( P_{n-1} w\right)(z) \end{matrix} \right)$$
 
 where
 
-$$C_\mathbb{R}(f)(z) = \frac{1}{2\pi i} \int_\mathbb{R} \frac{f(x)}{x-z}\, \mathrm{d}x$$
+$$C_\mathbb{R}(f)(z) = \frac{1}{2\pi \mathrm{i}} \int_\mathbb{R} \frac{f(x)}{x-z}\, \mathrm{d}x$$
 
 is the Cauchy transform of the function $$f$$. Furthermore $$\det X_n(z) = 1$$ identically. If $$n=0$$ the solution is $$ X_0(z) = \left( \begin{matrix} 1 & C_\mathbb{R} \left(  w\right)(z) \\ 0 & 1 \end{matrix} \right)$$. $$\triangle$$
 
@@ -47,7 +47,7 @@ Because $$\det X_n(z) = 1$$ we can introduce a "dual" Riemann-Hilbert problem $$
 Find a matrix valued function $$\widehat{X_n} : \mathbb{C} \setminus \mathbb{R} \to \mathbb{C}^{2 \times 2}$$ such that
 
 1. $$\widehat{X_n}$$ is analytic (entry-wise) on $$\mathbb{C} \setminus \mathbb{R}$$.
-2. $$\widehat{X_n}$$ has continuous non-tangential boundary values up to $$\mathbb{R}$$ from above ($$+$$) and below ($$-$$). We label these $$\widehat{X_n}^\pm (x) = \lim_{\epsilon \downarrow 0} \widehat{X_n}(x\pm i \epsilon)$$ for $$ x \in \mathbb{R}$$.
+2. $$\widehat{X_n}$$ has continuous non-tangential boundary values up to $$\mathbb{R}$$ from above ($$+$$) and below ($$-$$). We label these $$\widehat{X_n}^\pm (x) = \lim_{\epsilon \downarrow 0} \widehat{X_n}(x\pm \mathrm{i} \epsilon)$$ for $$ x \in \mathbb{R}$$.
 3. These boundary values are related by the jump condition
 $$\widehat{X_n}^+(x) = \widehat{X_n}^-(x) \left( \begin{matrix} 1 & 0 \\ -w(x) & 1\end{matrix} \right)$$
 4. Finally, $$\widehat{X_n}$$ is normalised at infinity by the scaling as $$z \to \infty$$
@@ -56,11 +56,11 @@ $$\widehat{X_n}(z) = \left( \mathbb{I}+\mathcal{O}(z^{-1}) \right) \left( \begin
 
 Indeed, we know the unique solution of the dual RHP, 
 
-$$ \widehat{X_n}(z) = \left( \begin{matrix} -2\pi i h_{n-1}^{-1} C_\mathbb{R} \left( P_{n-1} w\right)(z)  & 2\pi i h_{n-1}^{-1} P_{n-1}(z)  \\ -C_\mathbb{R} \left( P_n w\right)(z)  & P_n(z)   \end{matrix} \right).$$
+$$ \widehat{X_n}(z) = \left( \begin{matrix} -2\pi \mathrm{i} h_{n-1}^{-1} C_\mathbb{R} \left( P_{n-1} w\right)(z)  & 2\pi \mathrm{i} h_{n-1}^{-1} P_{n-1}(z)  \\ -C_\mathbb{R} \left( P_n w\right)(z)  & P_n(z)   \end{matrix} \right).$$
 
 Let us now derive a pair of recursion relations. We note that $$X_{n+1}$$ satisfies properties 1-3 (of the Fokas-Its-Kitaev RHP), differing only on property 4. Thus if we let $$\Delta_n(z) = X_{n+1}(z) X_n(z)^{-1}$$ we see that $$\Delta_n$$ has no jump across the real axis, has continuous boundary values, and is analytic on $$\mathbb{C}\setminus \mathbb{R}$$. It is thus entire by Morera's theorem. Let us expand this at infinity. Let $$X_n(z) = \left( \mathbb{I}+A_n z^{-1} + \mathcal{O}(z^{-2}) \right)\left( \begin{matrix} z^n & 0 \\ 0 & z^{-n}\end{matrix} \right)$$. Then
 
-$$\Delta_n(z)  = z  E_1 +  A_{n+1}E_1 - A_n E_1 + \mathcal{O}(z^{-1})$$
+$$\Delta_n(z)  = z  E_1 +  A_{n+1}E_1 - E_1 A_n + \mathcal{O}(z^{-1})$$
 
 where $$E_1 = \left( \begin{matrix} 1 & 0 \\ 0 & 0\end{matrix} \right)$$. However since $$\Delta_n$$ is entire the $$\mathcal{O}(z^{-1})$$ term is identically zero, so we have
 
@@ -74,21 +74,21 @@ where $$E_2 = \left( \begin{matrix} 0 & 0 \\ 0 & 1\end{matrix} \right)$$. Let us
 
 $$Y_n(z,w) := X_n(z)^{-1}X_n(w) = \widehat{X_n}(z)^{\mathsf{T}}X_n(w) . $$
 
-Using our recursion relations for $$\widehat{X_n}$$ and $$X_n$$ we may relate $$Y_n$$ and $$Y_{n+1}$$ by $$Y_{n+1}(z) = X_n^{-1}(z) \Delta_n(z)^{-1} \Delta_n(w) X_n(w)$$. $$\Delta_n(z)^{-1} \Delta_n(w)$$ is a polynomial in two variables, moreover
+Using our recursion relations for $$\widehat{X_n}$$ and $$X_n$$ we may relate $$Y_n$$ and $$Y_{n+1}$$ by $$Y_{n+1}(z,w) = X_n^{-1}(z) \Delta_n(z)^{-1} \Delta_n(w) X_n(w)$$. $$\Delta_n(z)^{-1} \Delta_n(w)$$ is a polynomial in two variables, moreover
 
 $$\Delta_n(z)^{-1} \Delta_n(w) = (z-w) (A_{n+1})_{21} E_{21} + \mathbb{I}$$
 
-where $$E_{21} = \left( \begin{matrix} 0 & 0 \\ 1 & 0\end{matrix} \right)$$. By our formula for solution $$X_n$$ we find $$(A_{n+1})_{21} = - 2\pi i h_n^{-1}$$, and so
+where $$E_{21} = \left( \begin{matrix} 0 & 0 \\ 1 & 0\end{matrix} \right)$$. By our formula for solution $$X_n$$ we find $$(A_{n+1})_{21} = - 2\pi \mathrm{i} h_n^{-1}$$, and so
 
-$$Y_{n+1}(z,w) = Y_n(z,w) - \frac{2\pi i}{h_n} (z-w) X_n^{-1}(z) E_{21} X_n(w)$$
+$$Y_{n+1}(z,w) = Y_n(z,w) - \frac{2\pi \mathrm{i}}{h_n} (z-w) X_n^{-1}(z) E_{21} X_n(w)$$
 
 If we now take the $$(2,1)$$ matrix element of both sides we find
 
-$$Y_{n+1}(z,w)_{21} = Y_n(z,w)_{21} - 2\pi i \frac{P_n(z)P_n(w)}{h_n} (z-w) .$$
+$$Y_{n+1}(z,w)_{21} = Y_n(z,w)_{21} - 2\pi \mathrm{i} \frac{P_n(z)P_n(w)}{h_n} (z-w) .$$
 
 If we now sum both sides from $$n=0$$ to $$n=N-1$$ we find
 
-$$Y_{N}(z,w)_{21} = Y_0(z,w)_{21} - 2\pi i (z-w) \sum_{n=0}^{N-1} \frac{P_n(z)P_n(w)}{h_n} . $$
+$$Y_{N}(z,w)_{21} = Y_0(z,w)_{21} - 2\pi \mathrm{i} (z-w) \sum_{n=0}^{N-1} \frac{P_n(z)P_n(w)}{h_n} . $$
 
 Then from our solution $$Y_0(z,w)_{21} = 0$$ we find 
 
@@ -99,6 +99,6 @@ which is the Christoffel-Darboux formula.
 **Remark:** This way of writing the Christoffel-Darboux formula mirrors nicely with what happens for $$\beta = 4$$. Here the relevant quantity that encodes eigenvalue correlation functions is the "pre-kernel," written as a sum over *skew-orthogonal polynomials*. Namely,
 
 $$\sum_{k=0}^{n-1} \frac{ P_{2k}(x) \mathrm{e}^{-V(x)} \frac{\mathrm{d}}{\mathrm{d}y}\left( P_{2k+1}(y) \mathrm{e}^{-V(y)} \right) - P_{2k+1}(x) \mathrm{e}^{-V(x)} \frac{\mathrm{d}}{\mathrm{d}y}\left( P_{2k}(y) \mathrm{e}^{-V(y)} \right)}{2 h_k} $$
-$$= - \frac{\mathrm{e}^{-V(x)-V(y)}}{4\pi i} \frac{(A_n(x)^{-1}A_n(y))_{21}}{x-y}$$
+$$= - \frac{\mathrm{e}^{-V(x)-V(y)}}{4\pi \mathrm{i}} \frac{(X_n(x)^{-1}X_n(y))_{21}}{x-y}$$
 
-where $$P_k$$ is the $$k$$th monic skew-orthogonal polynomial, $$h_k$$ is the skew-norm, and $$A_n$$ is a Riemann-Hilbert problem introduced in my [recent paper](https://arxiv.org/abs/2306.14107).
+where $$P_k$$ is the $$k$$th monic skew-orthogonal polynomial, $$h_k$$ is the skew-norm, and $$X_n$$ is a Riemann-Hilbert problem introduced in my [recent paper](https://arxiv.org/abs/2306.14107).

@@ -6,7 +6,7 @@ permalink: /quaternion-eigenvalues/
 katex: True
 ---
 
-In my [recent work](https://arxiv.org/abs/2306.14107) I made a connection between the theory of self-dual quaternion random matrices and Riemann-Hilbert problems. As part of the background of this research, I needed to revisit the theory of self-dual quaternion random matrices, in particular the question how to make sense of the *eigenvalues* of such matrices. This is not entirely self-explanatory given quaternions do not commute. In this post I hope to give an accessible explanation of this.
+In my [recent work](https://arxiv.org/abs/2306.14107) I made a connection between the theory of self-dual quaternion random matrices and Riemann-Hilbert problems. As part of the background of this research, I needed to revisit the theory of self-dual quaternion random matrices, in particular the question of how to make sense of the *eigenvalues* of such matrices. This is not entirely self-explanatory given that quaternions do not commute. In this post I hope to give an accessible explanation of this.
 
 First let us recall basic facts about quaternions. The algebra of quaternions $$\mathbb{H}$$ is the real span of 4 linearly independent elements $$1, e_1, e_2, e_3$$ with the relations
 
@@ -18,8 +18,8 @@ $$e_i e_j = -e_j e_i \quad \text{ for } i \neq j .$$
 
 It is convenient to identify these with $$2 \times 2$$ matrices
 
-$$\begin{aligned}1 \simeq \mathbb{I} = \left( \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right), & & e_1  \simeq \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right) \\
-e_2  \simeq \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right), & & e_3  \simeq \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right).\end{aligned}$$
+$$\begin{aligned}1 \simeq \mathbb{I} = \left( \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right), & & e_1  \simeq \left( \begin{matrix} \mathrm{i} & 0 \\ 0 & -\mathrm{i} \end{matrix} \right) \\
+e_2  \simeq \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right), & & e_3  \simeq \left( \begin{matrix} 0 & \mathrm{i} \\ \mathrm{i} & 0 \end{matrix} \right).\end{aligned}$$
 
 
 In what follows it will be useful to complexify the quaternions $$\mathbb{H}_{\mathbb{C}}$$ so that for $$Q \in \mathbb{H}_{\mathbb{C}}$$
@@ -37,7 +37,7 @@ Note that $$Q \mapsto Q^\mathsf{D}$$ is a $$\mathbb{C}$$-linear (and not conjuga
 
 $$Q^\mathsf{D} = -e_2 Q^\mathsf{T} e_2.$$
 
-**Proof:** Straightfoward calculation. $$\square$$
+**Proof:** Straightforward calculation. $$\square$$
 
 **Definition:** The *adjoint* of a quaternion $$Q= q_0 \mathbb{I} + q_1 e_1 + q_2 e_2 + q_3 e_3 \in \mathbb{H}_\mathbb{C}$$ is
 
@@ -75,7 +75,7 @@ for $$\zeta \in \mathbb{C}$$ and $$\mathrm{pf}$$ being the Pfaffian. Here we hav
 
 $$\mathrm{Qdet}(\mathcal{M}) = \mathrm{pf}(JM) .$$
 
-Surprisingly, there is a theorem due Dyson (see Theorem 5.1.2 of Mehta's textbook) that shows that $$\mathrm{Qdet}$$ admits a Laplace-type formula in terms of a sum over permutations (ibid, Equation 5.1.5). All of this presumes that the matrix $$M$$ is self-dual, as far as I understand $$\mathrm{Qdet}$$ is not defined for non-self-dual matrices. $$\triangle$$
+Surprisingly, there is a theorem due to Dyson (see Theorem 5.1.2 of Mehta's textbook) that shows that $$\mathrm{Qdet}$$ admits a Laplace-type formula in terms of a sum over permutations (ibid, Equation 5.1.5). All of this presumes that the matrix $$M$$ is self-dual, as far as I understand $$\mathrm{Qdet}$$ is not defined for non-self-dual matrices. $$\triangle$$
 
 Finally, to conclude our discussion, we must give meaning to the notion of *diagonalising* quaternion self-dual matrices. Let $$\mathcal{M}$$ be an $$n \times n$$ self-dual quaternion matrix and $$M = M^\dagger = M^\mathsf{D}$$ be its $$2n \times 2n$$ representative. We aim to show that $$M$$ may be diagonalised by an element of $$\mathrm{USp}(n)$$. Let us assume for simplicity of exposition that $$M$$ has exactly $$n$$ (distinct) eigenvalues $$\lambda_1, \dots, \lambda_n \in \mathbb{R}$$ each of multiplicity $$2$$. Let $$v_k \in \mathbb{C}^{2n}$$ be an eigenvector, $$\| v_k \| = 1$$, with eigenvalue $$\lambda_k$$.
 

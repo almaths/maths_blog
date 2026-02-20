@@ -14,7 +14,7 @@ The Gaussian Unitary Ensemble (GUE) is an ensemble of $$n \times n$$ Hermitian r
 
 $$\frac{1}{Z_{\mathrm{GUE}}} \mathrm{e}^{- \frac{1}{2} \mathrm{tr}(H^2)} $$
 
-$$Z_{\mathrm{GUE}}$$ is a normalisation constant. We are interested in the distribution of the extremal (rightmost) eigenvalue. A famous result (see Chapter 24 of Mehta's *Random Matrices*) shows that the cumulative distribution converges, under an appropriate scaling, to the Fredholm determinant of the *Airy kernel.* Let $$\lambda_n$$ be the rightmost eigenvalue.
+$$Z_{\mathrm{GUE}}$$ is a normalisation constant. We are interested in the distribution of the extremal (rightmost) eigenvalue. A famous result (see Chapter 24 of Mehta's *Random Matrices*) shows that the cumulative distribution function converges, under an appropriate scaling, to the Fredholm determinant of the *Airy kernel.* Let $$\lambda_n$$ be the rightmost eigenvalue.
 
 $$F(t) \equiv \lim_{n \to \infty} \mathbb{P}\left(\lambda_n \leq \sqrt{2n} + \frac{t}{\sqrt{2}n^\frac{1}{6}}\right) = \det(1 - K)_{L^2(t,\infty)}$$
 
@@ -26,7 +26,7 @@ The motivation for studying this is not simply that the GUE is an easy model to 
 
 $$\frac{1}{Z_{V}} \mathrm{e}^{- n \mathrm{tr} V(H)} $$
 
-for some entire function $$V$$ which grows sufficiently rapidly at $$\pm \infty$$, e.g. a polynomial. For generic $$V$$, the eigenvalues will asymptotically ($$n \to \infty$$) concentrate on disjoint intervals $$[\alpha_1, \beta_1], \dots , [\alpha_m, \beta_m]$$; and the distribution of the extremal eigenvalue at these endpoints $$\alpha_1, \beta_1, \dots, \alpha_m , \beta_m$$ will converge after a suitable rescaling, for "typical" $$V$$, to $$\det(1 - K)_{L^2(t,\infty)}$$. There is a similar universality in the bulk where the "universal" kernel is the sine kernel. Gap probabilities in the sine point process were found to be related to the Painlevé V equation by the group of Jimbo, Miwa, Môri and Sato in 1980 (see [here](https://core.ac.uk/download/pdf/25350076.pdf) for an accessible introduction to this work). The work of Tracy and Widom on the Airy kernel was strongly inspired by the work of this group.
+for some entire function $$V$$ which grows sufficiently rapidly at $$\pm \infty$$, e.g. a polynomial. For generic $$V$$, the eigenvalues will asymptotically ($$n \to \infty$$) concentrate on disjoint intervals $$[\alpha_1, \beta_1], \dots , [\alpha_m, \beta_m]$$; and the distribution function of the extremal eigenvalue at these endpoints $$\alpha_1, \beta_1, \dots, \alpha_m , \beta_m$$ will converge after a suitable rescaling, for "typical" $$V$$, to $$\det(1 - K)_{L^2(t,\infty)}$$. There is a similar universality in the bulk where the "universal" kernel is the sine kernel. Gap probabilities in the sine point process were found to be related to the Painlevé V equation by the group of Jimbo, Miwa, Môri and Sato in 1980 (see [here](https://core.ac.uk/download/pdf/25350076.pdf) for an accessible introduction to this work). The work of Tracy and Widom on the Airy kernel was strongly inspired by the work of this group.
 
 <h2>The Connection to Painlevé II</h2>
 
@@ -52,7 +52,7 @@ $$K_t(x,y) = K(x+t,y+t) = \int_t^\infty \mathrm{Ai}(x+s) \mathrm{Ai}(y+s) \, \ma
 
 Then $$F(t)=\det(1-K)_{L^2(t,\infty)} = \det(1-K_t)_{L^2(\mathbb{R}_+)}$$.
 
-**Notation:** We let $$\tau_t$$ be the shift operator, so that $$(\tau_t \phi)(x) = \phi(x+t)$$ and $$D$$ be the derivative operator, $$(D\phi)(x) = \phi^\prime(x)$$. We shall be somewhat careless and not specify on what spaces these operators act on. Let us also denote the Airy function $$\mathrm{Ai} = A$$. $$\triangle$$
+**Notation:** We let $$\tau_t$$ be the shift operator, so that $$(\tau_t \phi)(x) = \phi(x+t)$$ and $$D$$ be the derivative operator, $$(D\phi)(x) = \phi^\prime(x)$$. We shall be somewhat careless and not specify the spaces which these operators act on. Let us also denote the Airy function $$\mathrm{Ai} = A$$. $$\triangle$$
 
 We see that $$\frac{\mathrm{d}}{\mathrm{d}t} K_t(x,y) = - A(x+t)A(y+t)$$. Thus
 

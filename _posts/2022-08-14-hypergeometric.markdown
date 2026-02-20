@@ -6,7 +6,7 @@ permalink: /hypergeometric/
 katex: True
 ---
 
-In my [work](https://arxiv.org/abs/2102.08842) on products of truncated orthogonal matrices (in collaboration [N. Simm](https://profiles.sussex.ac.uk/p435611-nicholas-simm) and [F. Mezzadri](https://www.bristol.ac.uk/people/person/Francesco-Mezzadri-66ca5240-8f45-4ffc-a838-d1f68827bd23/)) it became important to estimate the following function for $$x \in (-1,1)$$ for $$L,N \to \infty$$.
+In my [work](https://arxiv.org/abs/2102.08842) on products of truncated orthogonal matrices (in collaboration with [N. Simm](https://profiles.sussex.ac.uk/p435611-nicholas-simm) and [F. Mezzadri](https://www.bristol.ac.uk/people/person/Francesco-Mezzadri-66ca5240-8f45-4ffc-a838-d1f68827bd23/)) it became important to estimate the following function for $$x \in (-1,1)$$ for $$L,N \to \infty$$.
 
 $$f_{N-2,L}(x) = \sum_{k=0}^{N-2} \binom{L+k}{k}^m x^k $$
 
@@ -21,7 +21,7 @@ Before discussing this, let me briefly outline the context of the problem. Let
 
 $$U_1, \dots, U_m \in \mathrm{O}(N+L)$$
 
-be $$m$$ independently sampled matrices from the orthogonal group $$\mathrm{O}(N+L)$$ according to Haar measure. We call the $$N \times N$$ upper left corner of $$\tilde{U}_i$$ a *truncated orthogonal matrix*. $$\tilde{U}_i$$ is thus a random matrix with real matrix elements, whose randomness is inherited from Haar measure.
+be $$m$$ independently sampled matrices from the orthogonal group $$\mathrm{O}(N+L)$$ according to Haar measure. We call $$\tilde{U}_i$$, the $$N \times N$$ upper left corner of $$U_i$$, a *truncated orthogonal matrix*. $$\tilde{U}_i$$ is thus a random matrix with real matrix elements, whose randomness is inherited from Haar measure.
 
 We are interested in the spectrum of the product
 
@@ -49,7 +49,7 @@ $$w_L$$ is the so-called "weight function," which we will not write out and can 
 
 Then 
 
-$$\sum_{k=0}^K a_k^m x^k = \frac{1}{(2\pi i)^{m-1}} \oint_{\Gamma^{m-1}} g_{K}\left( \frac{x}{z_1 \dots z_{m-1}}\right) g_{\infty} (z_1) \dots g_{\infty}(z_{m-1}) \frac{\mathrm{d}z_1}{z_1} \dots \frac{\mathrm{d}z_{m-1}}{z_{m-1}}$$
+$$\sum_{k=0}^K a_k^m x^k = \frac{1}{(2\pi \mathrm{i})^{m-1}} \oint_{\Gamma^{m-1}} g_{K}\left( \frac{x}{z_1 \dots z_{m-1}}\right) g_{\infty} (z_1) \dots g_{\infty}(z_{m-1}) \frac{\mathrm{d}z_1}{z_1} \dots \frac{\mathrm{d}z_{m-1}}{z_{m-1}}$$
 
 where $$\Gamma \subset U \setminus \{ 0 \}$$ is a closed contour enclosing $$0$$. This formula is also valid for $$K = +\infty$$ so long as $$\frac{x}{z_1 \dots z_{m-1}} \in U$$ throughout the contour $$\Gamma$$.
 
@@ -63,7 +63,7 @@ This means so long as we have good estimates on the case of $$m=1$$ we can extra
 
 **Remark:** Let $$f$$ and $$g$$ be two analytic functions defined in a neighbourhood of $$0$$. Define the convolution
 
-$$(f \ast g)(x) = \frac{1}{2\pi i} \oint_\Gamma f(z) g\left( \frac{x}{z} \right) \frac{\mathrm{d}z}{z}$$
+$$(f \ast g)(x) = \frac{1}{2\pi \mathrm{i}} \oint_\Gamma f(z) g\left( \frac{x}{z} \right) \frac{\mathrm{d}z}{z}$$
 
 where $$\Gamma$$ is a positively oriented contour that encloses $$0$$. Then our above lemma states that
 
@@ -77,16 +77,16 @@ The following is well known but we include a proof for completeness.
 
 **Proof:** Using the Cauchy residue theorem write
 
-$$\binom{L+k}{k} = \frac{1}{2\pi i} \oint_\Gamma \frac{(1+z)^{L+k}}{z^{k+1}} \, \mathrm{d}z$$
+$$\binom{L+k}{k} = \frac{1}{2\pi \mathrm{i}} \oint_\Gamma \frac{(1+z)^{L+k}}{z^{k+1}} \, \mathrm{d}z$$
 where $$\Gamma$$ is a positively oriented contour enclosing $$0$$. Then
 
-$$\sum_{k=0}^\infty \binom{L+k}{k} x^k =  \frac{1}{2\pi i} \oint_\Gamma \frac{(1+z)^{L}}{z} \sum_{k=0}^\infty \left( \frac{x(1+z)}{z} \right)^k \, \mathrm{d}z =  \frac{1}{1-x}\frac{1}{2\pi i} \oint_\Gamma (1+z)^{L} \frac{1}{z- \frac{x}{1-x}} \, \mathrm{d}z $$
+$$\sum_{k=0}^\infty \binom{L+k}{k} x^k =  \frac{1}{2\pi \mathrm{i}} \oint_\Gamma \frac{(1+z)^{L}}{z} \sum_{k=0}^\infty \left( \frac{x(1+z)}{z} \right)^k \, \mathrm{d}z =  \frac{1}{1-x}\frac{1}{2\pi \mathrm{i}} \oint_\Gamma (1+z)^{L} \frac{1}{z- \frac{x}{1-x}} \, \mathrm{d}z $$
 
 where $$x$$ is chosen sufficiently small that $$\left\lvert \frac{x(1+z)}{z} \right\rvert < 1$$ on the contour. This implies that the pole at $$z = \frac{x}{1-x}$$ is enclosed. $$\square $$
 
 This immediately gives a formula for the $$N = +\infty$$ case,
 
-$$f_{\infty,L}(x) = \frac{1}{(2\pi i )^{m-1}} \oint_{\Gamma^{m-1}} \frac{1}{\left( 1 - \frac{x}{z_1 \dots z_{m-1}} \right)^{L+1}} \prod_{k=1}^{m-1}\frac{\mathrm{d}z_k}{(1-z_k)^{L+1} z_k}. $$
+$$f_{\infty,L}(x) = \frac{1}{(2\pi \mathrm{i} )^{m-1}} \oint_{\Gamma^{m-1}} \frac{1}{\left( 1 - \frac{x}{z_1 \dots z_{m-1}} \right)^{L+1}} \prod_{k=1}^{m-1}\frac{\mathrm{d}z_k}{(1-z_k)^{L+1} z_k}. $$
 
 Applying the method of steepest descent allows one to immediately obtain $$L \to +\infty$$ asymptotics of $$f_{\infty,L}$$.
 
@@ -104,9 +104,9 @@ $$|f_{\infty,L}(-x)| \leq  \frac{1}{  \left( 1 - x^\frac{1}{m} \right)^{m(L+1)}}
 
 Notice that the second estimate is quite good, it differs from the pointwise asymptotics by a $$\mathcal{O}(1)$$ factor.
 
-Let $$g_{N-2}(x) = \sum_{k=0}^{N-2} \binom{L+k}{k}x^k$$. There are a variety integral representations of this, e.g. in terms of an incomplete beta function (see page 3 of [Khoruzhenko, Sommers and Zyczkowski](https://arxiv.org/abs/1008.2075)). If we write the coefficient $$\binom{L+k}{k} = \frac{1}{2\pi i } \oint_{\Gamma} \frac{1}{z^{k+1}(1-z)^{L+1}} \, \mathrm{d}z $$ and sum, we find
+Let $$g_{N-2}(x) = \sum_{k=0}^{N-2} \binom{L+k}{k}x^k$$. There are a variety of integral representations of this, e.g. in terms of an incomplete beta function (see page 3 of [Khoruzhenko, Sommers and Zyczkowski](https://arxiv.org/abs/1008.2075)). If we write the coefficient $$\binom{L+k}{k} = \frac{1}{2\pi \mathrm{i} } \oint_{\Gamma} \frac{1}{z^{k+1}(1-z)^{L+1}} \, \mathrm{d}z $$ and sum, we find
 
-$$g_{N-2}(x) = \frac{1}{(1-x)^{L+1}} \chi_{R> |x|} -\frac{x^{N-1 }}{2\pi i} \oint_{|z|=R} \frac{1}{z^{N-1}(1-z)^{L+1}} \frac{\mathrm{d}z}{z-x} $$
+$$g_{N-2}(x) = \frac{1}{(1-x)^{L+1}} \chi_{R> |x|} -\frac{x^{N-1 }}{2\pi \mathrm{i}} \oint_{|z|=R} \frac{1}{z^{N-1}(1-z)^{L+1}} \frac{\mathrm{d}z}{z-x} $$
 
 for any $$R > 0$$. A calculation shows that the steepest descent contour for the integral contained in the second term is $$R = \frac{1}{1+\gamma}$$. Putting this all together yields an integral represention of $$f_{N-2,L}$$.
 
