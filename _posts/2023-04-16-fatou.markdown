@@ -6,7 +6,7 @@ permalink: /fatou-lemma/
 katex: True
 ---
 
-[*Update, 20th February 2025:*  After linking this blog post to Google Gemini, I was informed that in fact this result is already known under the title of [Scheffé's lemma](https://en.wikipedia.org/wiki/Scheff%C3%A9%27s_lemma).]
+[*Update, 20th February 2026:*  After linking this blog post to Google Gemini, I was informed that in fact this result is already known under the title of [Scheffé's lemma](https://en.wikipedia.org/wiki/Scheff%C3%A9%27s_lemma).]
 
 In my [work](https://arxiv.org/abs/2212.00525) with Thomas Bothner on the elliptic Ginibre ensemble we had to prove a theorem of the following kind. We had a sequence of probability densities $$\rho_n : \mathbb{C} \to \mathbb{R}$$ defined on the complex plane, converging *pointwise* to an elliptic law $$\rho$$ as $$n \to +\infty$$. What we would like to prove is that
 
