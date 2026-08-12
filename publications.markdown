@@ -4,6 +4,8 @@ title: Publications & Preprints
 permalink: /publications/
 ---
 
+Alex Little, "A Riemann-Hilbert representation for Sobolev orthogonal polynomials," (2026) [arXiv:2608.08397](https://arxiv.org/abs/2608.08397)
+
 Tamara Grava, Alice Guionnet, Karol Kozlowski, Alex Little, "Large deviations of the periodic Toda chain," (2026) [arXiv:2604.00635](https://arxiv.org/abs/2604.00635)
 
 Alice Guionnet, Karol Kozlowski, Alex Little, "Asymptotic expansion of the partition function for β-ensembles with complex potentials," (2024) [arXiv:2411.10610](https://arxiv.org/abs/2411.10610)
