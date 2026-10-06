@@ -39,7 +39,7 @@ $$\varrho_n(z_1, \dots, z_n) = C_n \mathrm{e}^{-\sum_{k=1}^n |z_k|^2} \prod_{1 \
 
 The Ginibre ensemble obeys a "circular law." If we define the 1-point density as
 
-$$\varrho(x) = \frac{1}{n} \int_{(\mathbb{C})^{n-1}} \varrho_n(x, z_2, \dots, z_n) \, \mathrm{d}^2 z_2 \dots \mathrm{d}^2 z_n$$
+$$\varrho(x) = n \int_{(\mathbb{C})^{n-1}} \varrho_n(x, z_2, \dots, z_n) \, \mathrm{d}^2 z_2 \dots \mathrm{d}^2 z_n$$
 
 then $$\varrho(\sqrt{n}x ) \to \frac{1}{\pi} \chi_{\lvert x \rvert < 1}$$ as $$n \to\infty$$ in the weak-$$\ast$$ sense. That is, the spectral density tends towards the unit disk. Furthermore, the eigenvalue with largest real part is asymptotically Gumbel distributed. More precisely
 
