@@ -55,7 +55,7 @@ where $$\Gamma \subset U \setminus \{ 0 \}$$ is a closed contour enclosing $$0$$
 
 **Proof:** If we expand the product
 
-$$g_{K}\left( \frac{x}{z_1 \dots z_{m-1}}\right) g_{\infty} (z_1) \dots g_{\infty}(z_{m-1}) = \sum_{k_1, \dots k_{m-1}=0}^{\infty} \sum_{n=0}^K a_n a_{k_1} \dots a_{k_{m-1}} x^n z_1^{k_1 - n} \dots z_{m-1}^{k_{m-1} - n} .$$
+$$g_{K}\left( \frac{x}{z_1 \dots z_{m-1}}\right) g_{\infty} (z_1) \dots g_{\infty}(z_{m-1}) = \sum_{k_1, \dots , k_{m-1}=0}^{\infty} \sum_{n=0}^K a_n a_{k_1} \dots a_{k_{m-1}} x^n z_1^{k_1 - n} \dots z_{m-1}^{k_{m-1} - n} .$$
 
 Clearly $$\sum_{k=0}^K a_k^m x^k$$ is the coefficient of $$z_1^0 \dots z_{m-1}^0$$ in the above series, which can be picked out by the residue theorem. The above series is uniformly convergent on compact sets within the radius of convergence so term by term integration is justified.  $$\square $$
 
@@ -108,7 +108,7 @@ Let $$g_{N-2}(x) = \sum_{k=0}^{N-2} \binom{L+k}{k}x^k$$. There are a variety of 
 
 $$g_{N-2}(x) = \frac{1}{(1-x)^{L+1}} \chi_{R> |x|} -\frac{x^{N-1 }}{2\pi \mathrm{i}} \oint_{|z|=R} \frac{1}{z^{N-1}(1-z)^{L+1}} \frac{\mathrm{d}z}{z-x} $$
 
-for any $$R > 0$$. A calculation shows that the steepest descent contour for the integral contained in the second term is $$R = \frac{1}{1+\gamma}$$. Putting this all together yields an integral represention of $$f_{N-2,L}$$.
+for any $$0 < R < 1$$. A calculation shows that the steepest descent contour for the integral contained in the second term is $$R = \frac{1}{1+\gamma}$$. Putting this all together yields an integral representation of $$f_{N-2,L}$$.
 
 **Remark:** The technique discussed in this post can also be used to study the asymptotics of other generalised hypergeometric functions. For example, it allows one to obtain asymptotics of
 

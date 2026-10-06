@@ -115,7 +115,7 @@ with boundary condition $$p_\sigma(t,y) \sim \mathrm{Ai}(t+y)$$ as $$t \to +\inf
 
 How does one see that this generalises the Tracy-Widom result? If one takes $$\sigma \downarrow 0$$ one expects to reduce to the GUE. One sees that $$\mathrm{d}\nu_\sigma(\lambda)  \to \delta(\lambda) \, \mathrm{d}\lambda$$, and so
 
-$$\lim_{\sigma \downarrow 0} F_\sigma(t) = \exp\left( - \int_t^\infty (s-t) p_\sigma(s,0)^2 \, \mathrm{d}s \right)$$
+$$\lim_{\sigma \downarrow 0} F_\sigma(t) = \exp\left( - \int_t^\infty (s-t) p_0(s,0)^2 \, \mathrm{d}s \right)$$
 
 and our integro-differential equation, when evaluated at $$y =0$$, reduces to Painlevé II, with the right boundary condition.
 
@@ -141,7 +141,7 @@ where $$K_{\sigma}$$ is an integral operator with kernel
 
 $$K_{\sigma}(z_1, z_2) = \int_0^\infty \phi_\sigma(x_1 + s, y_1 ) \phi_\sigma(x_2 + s, y_2 ) \, \mathrm{d}s$$
 
-where $$\phi(x,y) = \pi^{-\frac{1}{4}} \mathrm{e}^{- \frac{y^2}{2}}\mathrm{Ai}(x+\sigma y)$$ and $$z_i \equiv (x_i, y_i)$$. By the invariance of the determinant, we then have
+where $$\phi_\sigma(x,y) = \pi^{-\frac{1}{4}} \mathrm{e}^{- \frac{y^2}{2}}\mathrm{Ai}(x+\sigma y)$$ and $$z_i \equiv (x_i, y_i)$$. By the invariance of the determinant, we then have
 
 $$F_\sigma(t) = \det(1- K_{\sigma})_{L^2((t,\infty)\times \mathbb{R})} .$$
 

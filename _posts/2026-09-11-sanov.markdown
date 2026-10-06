@@ -1,0 +1,388 @@
+---
+layout: post
+title:  "Sanov's theorem on the real line"
+date:   2026-08-11 18:50:11 +0100
+permalink: /sanov/
+katex: True
+---
+
+In my [recent work](https://arxiv.org/abs/2604.00635), in collaboration with Alice Guionnet, Karol Kozlowski and Tamara Grava, we proved a large deviation principle for the empirical measure of the Lax matrix of the Toda chain. Of course, that article contained both novel tricks and routine methods. This can present a problem for those unfamiliar with these methods because it is unclear what is actually innovative, what represents real obstacles *vs* things dealt with by standard theory. For that reason I'm writing this post to explain how one can prove such a large deviation principle (LDP) in the simplest context of iid random variables. This will lay out the "standard theory." In the process we will see how the *entropy* arises, making a bridge with one of the most mysterious concepts in physics.
+
+<h2>The setting</h2>
+
+Suppose we have a collection of $$N$$ independent identically distributed real valued random variables $$(X_k)_{k = 1}^N$$, each with distribution $$\mathrm{e}^{-V(x)}\mathrm{d} x$$, where $$V : \mathbb{R} \to \mathbb{R}$$ is a continuous function growing sufficiently fast that $$\int_{\mathbb{R}}\mathrm{e}^{-V(x)}\mathrm{d} x = 1$$. We now form the *empirical measure*
+
+$$\widehat{\mu}_N := \frac{1}{N}\sum_{k=1}^N \delta_{X_k} \, .$$
+
+This is a random probability measure on $$\mathbb{R}$$ and its behaviour as $$N \to +\infty$$ is what will interest us. In some ways $$\widehat{\mu}_N$$ is a "nice" object, however it requires some care. What makes it nice is that our original outcome was simply a vector $$(X_1, \dots, X_N) \in \mathbb{R}^N$$. There is no easy way to compare these vectors at different values of $$N$$ because they live on different spaces, and it isn't clear what kind of object one should compare it to in the limit as $$N$$ becomes large. On the other hand, the empirical measures all live on the same space, namely $$\mathcal{M}_1(\mathbb{R})$$, the space of Borel probability measures on $$\mathbb{R}$$. Likewise, we can take some fixed probability measure $$\nu \in \mathcal{M}_1(\mathbb{R})$$, and ask how close our random measure is to it. The price one pays for all of this is that $$\mathcal{M}_1(\mathbb{R})$$ is an infinite dimensional space, and one needs to understand something about its topology to work with it.
+
+To begin, let us define the *bounded Lipschitz* norm of a function $$f$$ as
+
+$$\| f \|_{\mathrm{BL}} =  \sup_{x \in \mathbb{R}} |f(x)| + \sup_{\substack{x, y \in \mathbb{R} \\ x \neq y}} \frac{|f(x) - f(y)|}{|x-y|}$$
+
+and let $$\mathrm{BL}(\mathbb{R})$$ be the space of functions on $$\mathbb{R}$$ with finite bounded Lipschitz norm. From this we define a metric on probability measures
+
+$$d(\mu, \nu) = \sup_{\| f \|_{\mathrm{BL}} \leq 1}\Big| \int_{\mathbb{R}} f \, \mathrm{d}(\mu - \nu) \Big| \, .$$
+
+**Definition:** We say a sequence of probability measures $$\{ \mu_n \}_{n \geq 1}$$ is *tight* if given any $$\epsilon > 0$$, there exists a compact set $$K$$ such that $$\mu_n(K^c) < \epsilon$$ for all $$n \geq 1$$.
+
+Intuitively, this means that the mass doesn't "flow off to infinity."
+
+**Lemma:** If the sequence $$\{ \mu_n \}_{n \geq 1}$$ converges to $$\mu$$ in $$d$$ then $$\{ \mu_n \}_{n \geq 1}$$ is tight.
+
+**Proof:** Take $$f$$ to be some Lipschitz function which is equal to $$0$$ on $$[-M,M]$$, equal to $$1$$ on $$(-\infty, -M-1] \cup [M+1, +\infty)$$ and takes values between $$0$$ and $$1$$ on the intermediate region. Then
+
+$$\limsup_{n \to +\infty} \mu_n([-M-1, M+1]^c) \leq \limsup_{n \to +\infty}\int_{\mathbb{R}} f \, \mathrm{d}\mu_n = \int_{\mathbb{R}} f \, \mathrm{d}\mu \leq \mu([-M,M]^c) \, .$$
+
+
+By making $$M$$ sufficiently large we can make $$\mu([-M,M]^c)< \frac{1}{2}\epsilon$$. This shows that the tail of the sequence is tight. It is easy to see that if a collection of measures is tight, then we may add any finite number of measures and the collection will still be tight. This concludes the proof. $$\square$$
+
+
+**Lemma:** The metric $$d$$ *metrises* weak convergence of measures. That is, given any sequence of Borel probability measures $$\{ \mu_n \}_{n \geq 1}$$, $$d(\mu_n, \mu) \to 0$$ iff $$\int_{\mathbb{R}} f \, \mathrm{d}\mu_n \to \int_{\mathbb{R}} f \, \mathrm{d}\mu$$ for all bounded and continuous functions $$f$$.
+
+Note that bounded and *continuous* functions form a larger class than bounded *Lipschitz* functions. What this lemma is saying is that *uniform* convergence (of the linear functional) on the unit ball within the space of bounded Lipschitz functions is equivalent to *pointwise* convergence (of the linear functional) on the larger space of bounded continuous functions.
+
+**Proof (sketch):** Let $$f$$ be a bounded and continuous function and suppose $$d(\mu_n, \mu) \to 0$$. Then since by tightness, without loss of generality, we may replace $$f$$ by a compactly supported (continuous) function. Such a function may be uniformly approximated by a Lipschitz function. Hence $$\int f \, \mathrm{d}\mu_n \to \int f \, \mathrm{d}\mu$$. 
+
+On the other hand, suppose $$\int f \, \mathrm{d}\mu_n \to \int f \, \mathrm{d}\mu$$ for all bounded and continuous $$f$$. By the same argument as before, we can show that in fact the sequence $$\{ \mu_n \}_{n \geq 1}$$ is tight. Next, consider the collection of functions $$f$$ such that $$\| f \|_{\mathrm{BL}} \leq 1$$. By tightness, we may fix some large compact set outside which there is little mass. On this compact set our collection of functions is bounded and uniformly equicontinuous, hence by the Arzelà-Ascoli theorem, this collection is totally bounded in the supremum norm $$\| \cdot \|_{\infty}$$, so that we can in fact approximate by a *finite* collection of continuous functions. We may then invoke that $$\int f \, \mathrm{d}\mu_n \to \int f \, \mathrm{d}\mu$$ for all the bounded continuous functions $$f$$ in our finite collection, and so arrive at $$d(\mu_n, \mu ) \to 0$$. $$\square$$
+
+Next, given any vector $$\mathbf{x} \in \mathbb{R}^N$$, we may define the inclusion map $$\iota :  \mathbb{R}^N \to \mathcal{M}_1(\mathbb{R})$$, $$\iota(\mathbf{x}) = \frac{1}{N} \sum_{k=1}^N \delta_{x_k}$$, and it is an easy exercise to show that $$d(\iota(\mathbf{x}), \iota(\mathbf{y})) \leq \frac{1}{\sqrt{N}} \| \mathbf{x} - \mathbf{y} \|$$, hence this map is continuous.
+
+Given the metric $$d$$, we may consider the $$\sigma$$-algebra of Borel subsets of $$\mathcal{M}_1(\mathbb{R})$$. From this we may define a probability measure $$\Pi_N$$, so that
+
+$$\Pi_N[A] \overset{\mathrm{def}}{=} \int_{\mathbb{R}^N} \mathbb{1}_{\{ \iota(\mathbf{x}) \in A \}} \prod_{k=1}^N \mathrm{e}^{-V(x_k)} \, \mathrm{d}x_k $$
+
+for any Borel set $$A \subset \mathcal{M}_1(\mathbb{R})$$.
+
+Moving forward, let us define the following *free energy functional* whose significance will later be apparent.
+
+$$\mathcal{I} : \mathcal{M}_1(\mathbb{R}) \longrightarrow [0,+\infty] $$
+
+$$\mathcal{I}[\mu] = \int_{\mathbb{R}} V \, \mathrm{d}\mu + \int_{\mathbb{R}} \ln \frac{\mathrm{d}\mu}{\mathrm{d}x} \mathrm{d}\mu  \, .$$
+
+Note that if $$\mu$$ does not have a density with respect to Lebesgue measure, we interpret the second term as $$+\infty$$. $$\int_{\mathbb{R}} V \, \mathrm{d}\mu$$ could be regarded as the "energy" and $$-\int_{\mathbb{R}} \ln \frac{\mathrm{d}\mu}{\mathrm{d}x} \mathrm{d}\mu$$ the entropy of the distribution of particles $$\mu$$, hence overall (assuming temperature is $$1$$), $$\mathcal{I}[\mu]$$ is the Helmholtz free energy of the configuration $$\mu$$.
+
+**Remark:** Notice that $$\mathcal{I}[\mu] = \int_{\mathbb{R}} \ln \frac{\mathrm{d}\mu/\mathrm{d}x}{\mathrm{e}^{-V}} \mathrm{d}\mu$$, which is precisely the relative entropy $$H( \mu \, \vert \, \mathrm{e}^{-V})$$. Since $$\ln$$ is concave, by Jensen's inequality we see that $$H( \mu \, \vert \, \mathrm{e}^{-V}) \geq 0$$ with equality only when $$\mu = \mathrm{e}^{-V}$$. Hence $$\mathcal{I}[\mu]\geq 0$$. We also note that since $$y \mapsto y \ln y$$ is strictly convex, so $$\mathcal{I}$$ is strictly convex.
+
+Next, we need the following important variational formula for $$\mathcal{I}[\mu] = H( \mu \, \vert \, \mathrm{e}^{-V})$$.
+
+**Lemma (Donsker-Varadhan formula):** Define the relative entropy $$H(\mu \, \vert \nu) = \int \ln \frac{\mathrm{d}\mu}{\mathrm{d}\nu} \, \mathrm{d}\mu$$. Then
+
+$$\sup_{f \in C_b(\mathbb{R})} \Big\{ \int f \, \mathrm{d}\mu - \ln \Big( \int \mathrm{e}^{f} \, \mathrm{d}\nu \Big) \Big\} = H(\mu \, \vert \nu)\, .$$
+
+**Proof:**
+
+To begin let us show $$\leq$$. If $$\mu \not\ll \nu$$ then $$H(\mu \, \vert \nu) = +\infty$$ and there is nothing to prove, and so assume $$\mu \ll \nu$$ and $$H(\mu \, \vert \nu) < +\infty$$.
+
+$$\int f \, \mathrm{d}\mu - H(\mu \, \vert \nu) = \int \ln \Big(\frac{\mathrm{e}^f}{\mathrm{d}\mu/\mathrm{d}\nu} \Big) \, \mathrm{d}\mu \leq \ln \int \mathrm{e}^f \, \mathrm{d}\nu$$
+
+by Jensen's inequality applied to $$\ln$$. This shows that
+
+$$\int f \, \mathrm{d}\mu - \ln \Big( \int \mathrm{e}^{f} \, \mathrm{d}\nu \Big)  \leq H(\mu \, \vert \nu)\, .$$
+
+To conclude the proof we need to find a sequence of bounded and continuous approximations to $$\ln \frac{\mathrm{d}\mu}{\mathrm{d}\nu}$$, and show that the left hand side converges to $$H(\mu \, \vert \nu)$$. This is subtle and requires invoking some big theorems from measure theory.
+
+To begin, we apply the Lebesgue decomposition theorem, which allows us to decompose $$\mu$$ into a measure which is absolutely continuous with respect to $$\nu$$ and another measure which is not. We write $$\mu = \rho \nu + \mu_s$$, where $$ 0 \leq \rho \leq +\infty$$ is a measurable function, and such that there is a Borel set $$S$$ such that $$\nu(S) = 0$$ and $$\mu_s(S^c) = 0$$, and where $$\rho(x) = +\infty$$ for $$x \in S$$. Then we may write
+
+$$H( \mu \, \vert \, \nu) = \int \ln \rho \,  \mathrm{d}\mu \in [0, +\infty] \, .$$
+
+Note that this formula works for both the case $$\mu \ll \nu$$ and $$\mu \not\ll \nu$$, since in the former case $$\mu_s = 0$$, and in the latter case $$\mu(S) > 0$$ and $$\ln\rho(x) = +\infty$$ for $$x \in S$$.
+
+Next, define
+
+$$f_M(x) = \begin{cases}
+\ln\rho(x) & -M \leq \ln\rho(x) \leq M \\
+M & \ln\rho(x) \geq M \\
+-M & \ln\rho(x) \leq -M \, .
+\end{cases}$$
+
+This function is bounded $$\lvert f_M(x) \rvert \leq M$$ and $$f_M(x) \to \ln\rho(x)$$ pointwise as $$M \to +\infty$$, however $$f_M$$ is not typically continuous. However we may invoke Lusin's theorem to say that $$f_M$$ is continuous except up to a small set. More precisely, let $$\sigma = \mu + \nu$$. Then by Lusin's theorem, for any $$\varepsilon > 0$$ there is a closed set $$E \subset \mathbb{R}$$ such that the restriction of $$f_M$$ to $$E$$ is continuous, and $$\sigma(E^c) < \varepsilon$$. The complement of $$E$$ is an open set, which consists of disjoint open intervals. It is then possible to construct a continuous function $$g : \mathbb{R} \to \mathbb{R}$$ which agrees with $$f_M$$ on $$E$$ and is bounded in absolute value by $$M$$, this can be done by linear interpolation. Let us now choose $$\varepsilon = \mathrm{e}^{-2M}$$ and let us rename the function $$g_M$$ to emphasise the $$M$$ dependence. 
+
+It is easy to see that 
+
+$$\int_{\mathbb{R}} g_M \, \mathrm{d}\mu \geq \int_{\mathbb{R}} f_M \, \mathrm{d}\mu - 2M \mathrm{e}^{-2M} \, . $$
+
+Likewise by decomposing into $$E$$ and its complement we have
+
+$$\int_{\mathbb{R}} \mathrm{e}^{g_M} \, \mathrm{d}\nu \leq  \int_{\mathbb{R}} \mathrm{e}^{f_M} \, \mathrm{d}\nu + \mathrm{e}^{-M} \, .$$
+
+Furthermore, by decomposing into the set for which $$\{ \ln \rho(x) \leq - M \}$$ and its complement, we find
+
+$$\int_{\mathbb{R}} \mathrm{e}^{f_M} \, \mathrm{d}\nu \leq 1 + \mathrm{e}^{-M} \, .$$
+
+Hence overall we have
+
+$$\int_{\mathbb{R}} f_M \, \mathrm{d}\mu  - 2M \mathrm{e}^{-2M} - \ln(1 + 2 \mathrm{e}^{-M}) \leq \int g_M \, \mathrm{d}\mu - \ln \Big( \int \mathrm{e}^{g_M} \, \mathrm{d}\nu \Big) \leq H(\mu \, \vert \nu) \, .$$
+
+Finally, if we decompose $$f_M = (f_M)_+ - (f_M)_-$$ into its positive and negative parts, we have $$(f_M)_+ \uparrow (\ln \rho)_+$$ and $$(f_M)_- \uparrow (\ln \rho)_-$$ as $$M \to +\infty$$. Furthermore $$(\rho \ln \rho)_- \leq \mathrm{e}^{-1}$$. Hence by monotone convergence $$\int_{\mathbb{R}} f_M \, \mathrm{d}\mu \to \int_{\mathbb{R}} \ln \rho \, \mathrm{d}\mu$$ as $$M \to +\infty$$. Since $$g_M$$ is bounded and continuous, this shows the supremum is given by $$H(\mu \, \vert \nu)$$. $$\square$$
+
+
+**Definition:** A function $$f : S \to [-\infty, +\infty]$$ on a metric space $$S$$ is said to be *lower semicontinuous* if for all points $$x \in S$$ and for any sequence $$\{ x_n \}_{n \geq 1}$$ in $$S$$ converging to $$x$$, we have $$\liminf_{n \to +\infty} f(x_n) \geq f(x)$$.
+
+**Lemma:** A function $$f$$ on a metric space $$S$$ is lower semicontinuous iff its level sets are closed, i.e. $$f^{-1}((-\infty,M])$$ is closed for all $$M \in \mathbb{R}$$.
+
+**Proof:** Suppose $$f$$ is lower semicontinuous and let $$\{ x_n \}_{n \geq 1}$$ be a  sequence converging to $$x$$ such that $$f(x_n) \leq M$$. Then $$f(x) \leq \liminf_{n \to +\infty}f(x_n) \leq M$$. Hence $$x \in f^{-1}((-\infty,M])$$, and so the level set is closed.
+
+Conversely, suppose that all level sets are closed and suppose $$\{ x_n \}_{n \geq 1}$$ is a sequence converging to $$x$$. We show that $$\liminf_{n \to +\infty} f(x_n) \geq f(x)$$. Without loss of generality let us assume $$\{ f(x_n) \}_{n \geq 1}$$ tends towards the liminf, which we can achieve by passing to a subsequence. Define $$A_n = \sup_{m \geq n} f(x_m)$$. We observe by definition that $$x_m \in f^{-1}((-\infty,A_n])$$ for all $$m \geq n$$, and by hypothesis this level set is closed, hence $$x \in f^{-1}((-\infty,A_n])$$, i.e. $$f(x) \leq A_n$$. Taking the limit as $$n \to +\infty$$ we find $$f(x) \leq \lim_{n\to +\infty}A_n = \liminf_{n \to +\infty}f(x_n)$$. $$\square$$
+
+**Lemma:** $$\mu \mapsto H(\mu \, \vert \nu)$$ is lower semicontinuous.
+
+**Proof:** Let $$\{ \mu_n \}_{n \geq 1}$$ be sequence of Borel probability measures converging to $$\mu$$. By the Donsker-Varadhan formula, for every bounded continuous $$f$$
+
+$$\liminf_{n \to +\infty}\Big\{ \int f \, \mathrm{d}\mu_n - \ln \Big( \int \mathrm{e}^{f} \, \mathrm{d}\nu \Big) \Big\} \leq  \liminf_{n \to +\infty} H(\mu_n \, \vert \nu) \, .$$
+
+Hence, by weak convergence,
+
+$$\int f \, \mathrm{d}\mu - \ln \Big( \int \mathrm{e}^{f} \, \mathrm{d}\nu \Big) \leq  \liminf_{n \to +\infty} H(\mu_n \, \vert \nu) \, .$$
+
+Taking the supremum of the left hand side with respect to $$f$$ we find $$H(\mu \, \vert \nu) \leq \liminf_{n \to +\infty} H(\mu_n \, \vert \nu)$$ which completes the proof. $$\square$$
+
+Next, we have an extremely important result which we shall not prove, but which is central to thinking about the topology of $$\mathcal{M}_1(\mathbb{R})$$, known as Prokhorov's theorem.
+
+**Proposition (Prokhorov):** A subset $$\Gamma \subset \mathcal{M}_1(\mathbb{R})$$ is compact if and only if $$\Gamma$$ is closed and tight.
+
+Recall that tightness means that the mass doesn't flow off to infinity, hence given any sequence of measures which is tight, there is a (weakly) convergent subsequence. Of course, this theorem is trivial in one direction, since if $$\Gamma$$ failed to be either closed or tight one could construct a sequence which either had no convergent subsequence or whose limit point isn't in $$\Gamma$$.
+
+Let us now make an assumption on the growth rate of $$V$$.
+
+**Assumption:** $$V(x) \to +\infty$$ as $$\lvert x \rvert \to +\infty$$. Furthermore, there exists an $$\alpha > 0$$ sufficiently small so that $$\int_{\mathbb{R}} \mathrm{e}^{-(1-\alpha)V(x)}\, \mathrm{d}x < +\infty$$.
+
+**Lemma:** The set
+
+$$K_L = \Big\{\mu \in \mathcal{M}_1(\mathbb{R})\, : \, \int V \, \mathrm{d}\mu \leq L \Big\} $$
+
+is compact.
+
+**Proof:** First we show that $$K_L$$ is closed. By monotone convergence theorem, and since $$V$$ is bounded from below,
+
+$$\int V \, \mathrm{d}\mu = \sup_{M > 0} \int \min\{ M, V \} \, \mathrm{d}\mu \, .$$
+
+Hence
+
+$$K_L = \bigcap_{M > 0}\Big\{\mu \in \mathcal{M}_1(\mathbb{R})\, : \, \int \min\{ M, V \} \, \mathrm{d}\mu \leq L \Big\} \, .$$
+
+The linear functional $$\mu \mapsto \int \min\{ M, V \} \, \mathrm{d}\mu$$ is continuous since $$\min\{ M, V \} $$ is bounded and continuous, hence its associated level sets are closed. Hence $$K_L$$ is an intersection of closed sets and so closed.
+
+Next, we show that $$K_L$$ is tight, and so by Prokhorov's theorem is compact. Let $$\epsilon > 0$$ and let $$R > 0$$ be sufficiently large that $$V(x) - \inf_{\mathbb{R}}V \geq \frac{L - \inf_{\mathbb{R}}V }{\epsilon}$$ for all $$\lvert x \rvert > R$$. Then by Chebyshev's inequality, for $$\mu \in K_L$$
+
+$$L \geq \int V \, \mathrm{d}\mu \geq \frac{L - \inf_{\mathbb{R}}V}{\epsilon} \mu([-R,R]^c)+ \inf_{\mathbb{R}}V$$
+
+and hence $$\mu([-R,R]^c) \leq \epsilon$$ for all $$\mu \in K_L$$. Hence $$K_L$$ is tight. $$\square$$
+
+
+**Proposition:** $$\mathcal{I}$$ has compact level sets, i.e. $$\mathcal{I}^{-1}((-\infty, M ])$$ is compact for all $$M > 0$$.
+
+**Proof:** From the Donsker-Varadhan formula, by our assumption on $$V$$, let us take $$f = \alpha \min\{ V,m\}$$. Let $$\mu \in \mathcal{I}^{-1}((-\infty, M ])$$, then
+
+$$\alpha \int  \min\{ V,m\} \, \mathrm{d}\mu  - \ln  \Big\{ \int \mathrm{e}^{\alpha \min\{ V,m\}- V(x)}\, \mathrm{d}x \Big\} \leq \mathcal{I}[\mu] \leq M \, .$$
+
+Taking $$m \to +\infty$$, by monotone convergence
+
+$$\alpha \int  V \, \mathrm{d}\mu  - \ln  \Big\{ \int \mathrm{e}^{- (1-\alpha)V(x)}\, \mathrm{d}x \Big\} \leq  M \, .$$
+
+
+Hence if we take $$L = \alpha^{-1} M + \alpha^{-1}\ln  \Big\{ \int \mathrm{e}^{-(1-\alpha) V(x)}\, \mathrm{d}x \Big\}$$ then $$\mathcal{I}^{-1}((-\infty, M ])\subset K_L$$.  We already know that $$\mathcal{I}^{-1}((-\infty, M ])$$ is closed since $$\mathcal{I}$$ is lower semicontinuous, and we know that $$K_L$$ is compact. Hence $$\mathcal{I}^{-1}((-\infty, M ])$$ is a closed subset of a compact set, and so is compact. $$\square$$
+
+<h2>The theorem</h2>
+
+This concludes the topological background. We are now ready to state the main theorem.
+
+**Theorem (Large deviation principle for $$\widehat{\mu}_N$$):** For any Borel set $$A \subset \mathcal{M}_1(\mathbb{R})$$,
+
+$$\exp( - N \inf_{A^o} \mathcal{I} + o(N)) \leq \Pi_N[A] \leq \exp( - N \inf_{\overline{A}} \mathcal{I} + o(N))$$
+
+as $$N \to +\infty$$, where $$A^o$$ is the interior of the set $$A$$ and $$\overline{A}$$ is the closure.
+
+Morally, this result says that the probability of seeing the distribution of particles $$\mu$$ goes like $$\exp( - N \mathcal{I}[\mu])$$. If one has a whole event $$A$$, the probability of that event will be dominated by the *least* unlikely way it can happen. This is what yields the infimum. $$N$$ is called the *speed* of the large deviation principle (LDP) and $$\mathcal{I}$$ is called the *rate function*. A rate function which is lower semicontinuous and has compact level sets is said to be "good", hence we have already shown that $$\mathcal{I}$$ is "good." 
+
+The most probable distribution of particles is the one that minimises $$\mathcal{I}$$ (namely $$\mu = \mathrm{e}^{-V}$$) and deviations from this are exponentially improbable with the constant in the exponential given by the difference of the free energy from its minimum.
+
+Another way of formulating the LDP is to say that for any open set $$U$$
+
+$$\liminf_{N \to +\infty} \frac{1}{N} \ln \Pi_N[U] \geq - \inf_U \mathcal{I}$$
+
+and for any closed set $$F$$
+
+$$\limsup_{N \to +\infty} \frac{1}{N} \ln \Pi_N[F] \leq - \inf_F \mathcal{I} \, .$$
+
+
+
+<h2>The proof</h2>
+
+There is a useful strategy to prove such LDPs which involves proving three separate claims which together will imply the LDP. These claims are
+
+(1) An upper bound on balls. Namely,  we define $$B(\mu,\delta) = \{ \nu \in \mathcal{M}_1(\mathbb{R}) \, : d(\mu,\nu) < \delta \}$$, then
+
+$$\limsup_{\delta \to 0}\limsup_{N \to +\infty} \frac{1}{N} \ln \Pi_N[B(\mu,\delta)] \leq - \mathcal{I}[\mu] \, .$$
+
+(2) A lower bound on balls. Namely,
+
+$$\liminf_{\delta \to 0}\liminf_{N \to +\infty} \frac{1}{N} \ln \Pi_N[B(\mu,\delta)] \geq - \mathcal{I}[\mu] \, .$$
+
+
+(3) Exponential tightness. This says that there exists a sequence of compact subsets $$(K_L)_{L > 0}$$ of $$\mathcal{M}_1(\mathbb{R})$$ such that
+
+$$\limsup_{L \to +\infty}\limsup_{N \to +\infty} \frac{1}{N} \ln \Pi_N[K_L^c] = - \infty \, .$$
+
+This final requirement says that, at this exponential scale, we do not have mass flowing off to infinity.
+
+**Lemma:** (1), (2) and (3) imply that $$(\Pi_N)_{N \geq 1}$$ satisfies an LDP at speed $$N$$ and with rate function $$\mathcal{I}$$.
+
+**Proof:** Let $$U \subset \mathcal{M}_1(\mathbb{R})$$ be open, and let $$\mu \in U$$. Then there exists a $$\delta > 0$$ such that $$B(\mu,\delta) \subset U$$. Hence $$\frac{1}{N} \ln \Pi_N[B(\mu,\delta)] \leq \frac{1}{N} \ln \Pi_N[U]$$. Taking the liminf as $$N \to +\infty$$ and then as $$\delta \to 0$$, by (2) we have
+
+$$- \mathcal{I}[\mu] \leq \liminf_{N \to +\infty}\frac{1}{N} \ln \Pi_N[U] \, .$$
+
+However $$\mu \in U$$ was arbitrary, hence we may take the supremum of the left hand side to conclude that $$-\inf_U \mathcal{I} \leq \liminf_{N \to +\infty}\frac{1}{N} \ln \Pi_N[U]$$. This proves the lower bound.
+
+Next, let $$F \subset \mathcal{M}_1(\mathbb{R})$$ be a closed set, and write $$F \subset K_L^c \cup (F \cap K_L)$$. By subadditivity
+
+$$\frac{1}{N} \ln \Pi_N[F] \leq \frac{1}{N} \ln (\Pi_N[F \cap K_L] + \Pi_N[K_L^c]) $$
+
+$$\leq \frac{\ln 2}{N} + \max\{ \frac{1}{N} \ln \Pi_N[F \cap K_L] , \frac{1}{N} \ln \Pi_N[K_L^c] \} \, .$$
+
+$$F \cap K_L$$ is the intersection of a closed set with a compact set, and so is compact. Next, let $$\epsilon > 0$$ be arbitrary. Then by (1) for every $$\mu \in F \cap K_L$$, there is a $$\delta_\mu > 0$$ such that
+
+$$\limsup_{N \to +\infty} \frac{1}{N} \ln \Pi_N[B(\mu,\delta_\mu)] \leq - \mathcal{I}[\mu] + \epsilon \, .$$
+
+$$\cup_{\mu \in F \cap K_L}B(\mu,\delta_\mu)$$ is an open cover of $$F \cap K_L$$, and so by compactness it has a finite subcover $$\cup_{j=1}^k B(\mu_j,\delta_{\mu_j})$$. Hence by subadditivity we have
+
+$$\frac{1}{N} \ln \Pi_N[F] \leq \frac{\ln 2k }{N} + \max_{j \in [\![ 1, k]\!] }\{ \frac{1}{N} \ln \Pi_N[B(\mu_j,\delta_{\mu_j})] , \frac{1}{N} \ln \Pi_N[K_L^c] \} \, . $$
+
+Hence
+
+$$\limsup_{N \to +\infty}\frac{1}{N} \ln \Pi_N[F] \leq \max_{j \in [\![ 1, k]\!] }\{ - \mathcal{I}[\mu_j] + \epsilon , \limsup_{N \to +\infty} \frac{1}{N} \ln \Pi_N[K_L^c] \} \, . $$
+
+If we then let $$L \to +\infty$$, and replace the maximum over $$\mu_1, \dots, \mu_k$$ with a supremum over $$F$$, we find
+
+$$\limsup_{N \to +\infty}\frac{1}{N} \ln \Pi_N[F] \leq - \inf_F \mathcal{I} + \epsilon . $$
+
+$$\epsilon > 0$$ was arbitrary, and hence we conclude the result. $$\square$$
+
+With these tools in hand, let us now prove (1), (2) and (3). The argument is based around a trick called *tilting* in which you multiply and divide by $$\prod_{k=1}^N \mathrm{e}^{-f(x_k)}$$, and then at the end of the calculation optimise over $$f$$. The idea is that this "deforms" our probability distribution $$\mathrm{e}^{-V}$$ to a new "tilted" distribution $$ Z^{-1}\mathrm{e}^{f-V}$$, with $$f$$ cleverly chosen so that the event one is considering becomes *highly probable* under the tilted measure.
+
+Let us begin by proving the upper bound on balls.
+
+**Proposition (Upper bound on balls):** 
+
+$$\limsup_{\delta \to 0}\limsup_{N \to +\infty} \frac{1}{N} \ln \Pi_N[B(\mu,\delta)] \leq - \mathcal{I}[\mu] \, .$$
+
+**Proof:**
+
+Recall that 
+
+$$\Pi_N[B(\mu,\delta)] = \int_{\mathbb{R}^N} \mathbb{1}_{\{ \iota(\mathbf{x}) \in B(\mu,\delta) \}} \prod_{k=1}^N \mathrm{e}^{-V(x_k)} \, \mathrm{d}x_k \, .$$
+
+Let us do the "tilting" trick. Fix a bounded continuous function $$f$$. Then
+
+$$\Pi_N[B(\mu,\delta)] = \int_{\mathbb{R}^N} \mathbb{1}_{\{ \iota(\mathbf{x}) \in B(\mu,\delta) \}} \mathrm{e}^{-N \int f \, \mathrm{d}\iota(\mathbf{x})} \prod_{k=1}^N \mathrm{e}^{f(x_k)-V(x_k)} \, \mathrm{d}x_k \, .$$
+
+Fix $$\epsilon> 0$$ arbitrary. Then by making $$\delta > 0$$ sufficiently small, we can make
+
+$$ \int f \, \mathrm{d}\iota(\mathbf{x}) \geq \int f \, \mathrm{d}\mu - \epsilon $$
+
+under the integral sign. Then, extending the domain of integration to all of $$\mathbb{R}^N$$ we have
+
+$$\limsup_{\delta \to 0}\limsup_{N \to +\infty}\frac{1}{N} \ln \Pi_N[B(\mu,\delta)] \leq - \int f \, \mathrm{d}\mu + \epsilon + \ln \int \mathrm{e}^{f - V} \, \mathrm{d}x \, .$$
+
+We may then take $$\epsilon \to 0$$ and then optimise over $$f$$. Hence by the Donsker-Varadhan formula we have $$\limsup_{\delta \to 0}\limsup_{N \to +\infty}\frac{1}{N} \ln \Pi_N[B(\mu,\delta)] \leq - H(\mu \, \vert \, \mathrm{e}^{-V})$$. $$\square$$
+
+Next, we move onto the lower bound on balls. We will need two basic pieces of probability theory before we embark on the proof.
+
+**Proposition (weak law of large numbers):** Let $$X_1, X_2, \dots$$ be a sequence of iid random variables such that $$\mathbb{E}\lvert X_i \rvert < +\infty$$. If we denote $$m = \mathbb{E} X_i $$, then for any $$\epsilon > 0$$
+
+$$ \mathbb{P}\Big( \Big\lvert \frac{1}{N}(X_1 + \dots + X_N) - m \Big\rvert \geq \epsilon  \Big) \to 0$$
+
+as $$N \to +\infty$$.
+
+We do not prove this result, it can be found in a standard course on probability theory. What is essential is that the assumption on the random variables is very weak: we only assume $$\mathbb{E}\lvert X_i \rvert < +\infty$$, we *don't* assume $$X_i$$ has a variance.
+
+**Proposition:** Let $$X_1, X_2, \dots$$ be a sequence of iid real valued random variables with distribution $$\nu \in \mathcal{M}_1(\mathbb{R})$$. Then form the empirical measure $$\iota(\mathbf{X}) := \frac{1}{N}\sum_{k=1}^N \delta_{X_k}$$. Then for any $$\epsilon > 0$$, we have $$\mathbb{P}(d(\nu, \iota(\mathbf{X})) \geq \epsilon ) \to 0$$ as $$N \to +\infty$$.
+
+Before embarking on the proof, let us briefly state why it is not entirely trivial. We know from the weak law of large numbers that for any *fixed* (bounded Lipschitz) function $$f$$,
+
+$$\int f \, \mathrm{d}(\nu - \iota(\mathbf{X}) ) \to 0$$
+
+in probability. This is a kind of pointwise convergence for the linear functional. But if we take the *supremum* over $$f$$ (before taking the $$N \to +\infty$$ limit) this is a rather different beast, because the space of such bounded Lipschitz functions is infinite dimensional, and for the *supremum* to go to $$0$$ requires a kind of *uniform* convergence of the linear functional. As might be expected, we are saved by Arzelà-Ascoli which allows us to approximate the (infinite dimensional) unit ball by a finite collection of functions.
+
+**Proof:** Recall that $$d(\nu, \iota(\mathbf{X})) = \sup_{\| f \|_{\mathrm{BL}} \leq 1} \Big\lvert \int f \, \mathrm{d}(\nu - \iota(\mathbf{X}) ) \Big\rvert $$.
+
+Consider the event that $$d(\nu, \iota(\mathbf{X})) \geq \epsilon$$. To begin, we choose an $$R > 0$$ sufficiently large so that $$\nu([-R,R]^c) \leq \epsilon/4$$. Then, introduce a smooth cutoff function $$0 \leq \chi \leq 1$$ such that $$\chi(x) = 1$$ for $$x \in [-R,R]$$ and $$\chi(x) = 0$$ for $$\lvert x \rvert \geq R+1$$. Then for any $$\| f \|_{\mathrm{BL}} \leq 1$$ we have
+
+$$\Big\lvert \int f \, \mathrm{d}(\nu - \iota(\mathbf{X}) ) \Big\rvert \leq \Big\lvert \int f \chi \, \mathrm{d}(\nu - \iota(\mathbf{X}) ) \Big\rvert + \nu([-R,R]^c) + \iota(\mathbf{X})([-R,R]^c) \, .$$
+
+Then
+
+$$\mathbb{P}(d(\nu, \iota(\mathbf{X})) \geq \epsilon) \leq \mathbb{P} \Big( \sup_{\| f \|_{\mathrm{BL}} \leq 1} \Big\lvert \int f \chi \, \mathrm{d}(\nu - \iota(\mathbf{X}) ) \Big\rvert \geq \frac{\epsilon}{4} \Big) + \mathbb{P}\Big(\iota(\mathbf{X})([-R,R]^c) \geq \frac{\epsilon}{2} \Big) \, . $$
+
+$$\iota(\mathbf{X})([-R,R]^c)$$ is the random variable that counts what proportion of $$X_k$$ land in $$[-R,R]^c$$. It is a sum of iid random variables and has expectation $$\nu([-R,R]^c) \leq \frac{\epsilon}{4}$$, hence by the weak law of large numbers $$\mathbb{P}\Big(\iota(\mathbf{X})([-R,R]^c) \geq \frac{\epsilon}{2} \Big) \to 0$$ as $$N \to +\infty$$.
+
+Next, observe that the functions $$\{ f\chi \, : \, \| f \|_{\mathrm{BL}} \leq 1 \}$$ form an equicontinuous, uniformly bounded family supported on the compact set $$[-R-1,R+1]$$.   By Arzelà-Ascoli, given an $$\epsilon  > 0$$, there is a finite collection of continuous functions $$g_1, \dots, g_k$$ defined on $$[-R-1,R+1]$$ such that for every $$g \in \{ f\chi \, : \, \| f \|_{\mathrm{BL}} \leq 1 \}$$ there is a $$j \in [\![ 1, k ]\!]$$ such that $$\sup_{x \in [-R-1, R+1]} \lvert g(x) - g_j(x) \rvert \leq \frac{\epsilon}{16}$$. We can define $$g_j$$ to be $$0$$ on $$[-R-1,R+1]^c$$, which breaks continuity but this doesn't matter. Then
+
+$$\mathbb{P} \Big( \sup_{\| f \|_{\mathrm{BL}} \leq 1} \Big\lvert \int f \chi \, \mathrm{d}(\nu - \iota(\mathbf{X}) ) \Big\rvert \geq \frac{\epsilon}{4} \Big) \leq \mathbb{P} \Big(\exists j \in [\![ 1, k]\!] \text{ s.t. }  \Big\lvert \int g_j \, \mathrm{d}(\nu - \iota(\mathbf{X}) ) \Big\rvert \geq \frac{\epsilon}{8} \Big)$$
+
+$$\quad \quad \leq \sum_{j=1}^k \mathbb{P} \Big( \Big\lvert \int g_j \, \mathrm{d}(\nu - \iota(\mathbf{X}) ) \Big\rvert \geq \frac{\epsilon}{8} \Big) \to 0 \, . \quad \quad \square$$
+
+We now have enough tools to prove the lower bound on balls.
+
+**Proposition (Lower bound on balls):** 
+
+$$\liminf_{\delta \to 0}\liminf_{N \to +\infty} \frac{1}{N} \ln \Pi_N[B(\mu,\delta)] \geq - \mathcal{I}[\mu] \, .$$
+
+**Proof:** We begin by remarking that if $$\mathcal{I}[\mu] = +\infty$$ then the claim is trivial, hence without loss of generality we may assume $$\mathcal{I}[\mu] < +\infty$$, which implies $$\mu$$ is absolutely continuous with respect to $$\mathrm{e}^{-V}\, \mathrm{d}x$$, and thus has a Radon-Nikodym derivative $$\rho = \frac{\mathrm{d}\mu}{\mathrm{e}^{-V} \mathrm{d}x} \in L^1(\mathrm{e}^{-V} \mathrm{d}x)$$.
+
+Next, we restrict our measure to the support of $$\mu$$ and we then tilt our measure with respect to $$\rho$$, so that
+
+$$\Pi_N[B(\mu,\delta)] \geq \int_{(\mathrm{supp} \, \mu)^N} \mathbb{1}_{ \{ \iota(\mathbf{x}) \in B(\mu, \delta) \} } \mathrm{e}^{- \sum_{k=1}^N \ln \rho(x_k)} \, \mathrm{d}\mu(x_1) \dots \mathrm{d}\mu(x_N)$$
+
+$$= \mathbb{E}_{\mu^{\otimes N}}[ \mathbb{1}_{ \{ \iota(\mathbf{X}) \in B(\mu, \delta) \} } \mathrm{e}^{- \sum_{k=1}^N \ln \rho(X_k)} ] \, .$$
+
+Next, let $$\epsilon > 0$$ be arbitrary, and let us bound from below by restricting to the event that $$\sum_{k=1}^N \ln \rho(X_k) \leq N H( \mu \, \vert \, \mathrm{e}^{-V}) + N \epsilon$$. Then, by a reverse union bound, we find that
+
+$$\Pi_N[B(\mu,\delta)] \geq  $$
+
+$$\mathrm{e}^{-N \epsilon - N H( \mu \, \vert \, \mathrm{e}^{-V})} \Big(1 - \mathbb{P}_{\mu^{\otimes N}}( d(\iota(\mathbf{X}), \mu)\geq \delta ) - \mathbb{P}_{\mu^{\otimes N}}( \frac{1}{N} \sum_{k=1}^N \ln \rho(X_k) > H( \mu \, \vert \, \mathrm{e}^{-V}) + \epsilon ) \Big) \, . $$
+
+By the previous proposition
+
+$$\mathbb{P}_{\mu^{\otimes N}}( d(\iota(\mathbf{X}), \mu)\geq \delta ) \to 0$$
+
+as $$N \to +\infty$$. Next, we claim that 
+
+$$\int |\ln \rho(x) | \, \mathrm{d}\mu(x) < +\infty \, .$$
+
+To see this, observe that we have the global lower bound $$x \ln x \geq - \mathrm{e}^{-1}$$, hence $$\lvert \rho(x) \ln \rho(x)\rvert \leq 2\mathrm{e}^{-1} + \rho(x) \ln \rho(x)$$. Hence
+
+$$\int \lvert\ln \rho(x) \rvert \, \mathrm{d}\mu(x)  = \int \lvert \rho(x) \ln \rho(x) \rvert \mathrm{e}^{-V(x)}  \, \mathrm{d}x \leq 2\mathrm{e}^{-1} + H( \mu \, \vert \, \mathrm{e}^{-V})  < +\infty \, .$$
+
+Hence the random variables $$\{ \ln \rho(X_k) \}_{k \in [\![ 1, N]\!]}$$ are an iid collection with finite means and so satisfy the hypotheses of the weak law of large numbers. Since the mean of these random variables is $$H( \mu \, \vert \, \mathrm{e}^{-V})$$, we have by the WLLN
+
+$$\mathbb{P}_{\mu^{\otimes N}}( \frac{1}{N} \sum_{k=1}^N \ln \rho(X_k) > H( \mu \, \vert \, \mathrm{e}^{-V}) + \epsilon ) \to 0$$
+
+as $$N \to +\infty$$. Hence 
+
+$$\liminf_{\delta \to 0}\liminf_{N \to +\infty} \frac{1}{N} \ln \Pi_N[B(\mu,\delta)] \geq - \mathcal{I}[\mu] - \epsilon \, .$$
+
+$$\epsilon > 0$$ was arbitrary, hence we conclude the proof. $$\square$$
+
+**Proposition (Exponential tightness):** Recall
+
+$$K_L = \Big\{\mu \in \mathcal{M}_1(\mathbb{R})\, : \, \int V \, \mathrm{d}\mu \leq L \Big\}$$
+
+which we have already shown to be compact in $$\mathcal{M}_1(\mathbb{R})$$. Then
+
+$$\limsup_{L \to +\infty}\limsup_{N \to +\infty} \frac{1}{N} \ln \Pi_N[K_L^c] = - \infty \, .$$
+
+**Proof:** It is easily seen that
+
+$$\Pi_N[K_L^c] = \int_{\mathbb{R}^N} \mathbb{1}_{\iota(\mathbf{x}) \in K_L^c} \prod_{k=1}^N \mathrm{e}^{-V(x_k)} \mathrm{d}x_k \leq \mathrm{e}^{-N L \alpha} \Big( \int_{\mathbb{R}} \mathrm{e}^{-(1-\alpha)V(x)}\, \mathrm{d}x \Big)^N \, .$$
+
+Evaluating the limsup we arrive at the result. $$\square$$
+
+<h2>Outlook</h2>
+
+This should hopefully give an idea of what such LDPs mean and how they are proven. With these ideas in place, it is fairly easy to consider deformations, for example
+
+$$\prod_{a,b=1}^N \mathrm{e}^{\frac{1}{N}W(x_a, x_b)} \prod_{k=1}^N \mathrm{e}^{-V(x_k)}$$
+
+
+for $$W$$ continuous and bounded. The situation becomes more difficult if $$W$$ has singularities. Thus the method developed above is fairly robust and only demands extra work insofar as interactions are less regular. For example $$W(x,y) = P \ln|x - y|$$ for $$P > 0$$ corresponds to the so-called high-temperature $$\beta$$-ensemble, and the presence of the logarithmic singularity means that proving large deviations is less trivial. In a future post I will discuss large deviations of the periodic Toda chain, where there are two difficulties: first to actually obtain something like an explicit formula for the joint density of eigenvalues and secondly to deal with its singularities.

@@ -44,7 +44,7 @@ $$I_N =  \left(  1 +\mathcal{O}(\mathrm{e}^{-NC}) \right) \int_{U} \mathrm{e}^{N
 
 for some $$C > 0$$ and then 
 
-$$I_N = \left(  1 +\mathcal{O}(\mathrm{e}^{-NC}) \right) \mathrm{e}^{N \varphi(x^\ast)} \int_{\psi^{-1}(U)} \mathrm{e}^{-N u^2} (\psi^{-1})^\prime(u) \, \mathrm{d}u\, .$$
+$$I_N = \left(  1 +\mathcal{O}(\mathrm{e}^{-NC}) \right) \mathrm{e}^{N \varphi(x^\ast)} \int_{\psi(U)} \mathrm{e}^{-N u^2} (\psi^{-1})^\prime(u) \, \mathrm{d}u\, .$$
 
 Taylor expanding $$(\psi^{-1})^\prime$$ at $$0$$ and integrating term by term (after taking the limits of integration to $$\pm \infty$$) we find an asymptotic series
 
@@ -52,7 +52,7 @@ $$I_N \sim \sqrt{\frac{2\pi}{-N \varphi^{\prime \prime}(x^\ast)}} \mathrm{e}^{N 
 
 Note that we obtain an asymptotic series in $$\frac{1}{N}$$ because all the odd integrals vanish. This is the *Laplace method* in brief.
 
-**Remark:** Note that we have a kind of "central limit theorem" happening inside the integral, where if we think of the integrand as representing a distribution function, then $$\sqrt{N}(x - x^\ast)$$ is asymptotically Gaussian with mean $$0$$ and variance $$\frac{1}{\sqrt{-  \varphi^{\prime \prime}(x^\ast)}}$$. 
+**Remark:** Note that we have a kind of "central limit theorem" happening inside the integral, where if we think of the integrand as representing a distribution function, then $$\sqrt{N}(x - x^\ast)$$ is asymptotically Gaussian with mean $$0$$ and standard deviation $$\frac{1}{\sqrt{-  \varphi^{\prime \prime}(x^\ast)}}$$. 
 
 <h2>Contour integrals</h2>
 
@@ -224,7 +224,7 @@ $$\frac{\mathrm{d}}{\mathrm{d}z} g[\mu^{\Gamma_{\mathrm{eq}}}](z) =   \int_{\Gam
 
 Next, define the "complex energy" as
 
-$$\mathcal{I}_{\Gamma_{\mathrm{eq}}}[\mu^\Gamma_{\mathrm{eq}}] \overset{\mathrm{def}}{=} \int_{\Gamma_{\mathrm{eq}}}\Big( \frac{1}{2} g^+[\mu^{\Gamma_{\mathrm{eq}}}] + \frac{1}{2} g^-[\mu^{\Gamma_{\mathrm{eq}}}] + 2 V\Big) \, \mathrm{d} \mu^{\Gamma_{\mathrm{eq}}} $$
+$$\mathcal{I}_{\Gamma_{\mathrm{eq}}}[\mu^{\Gamma_{\mathrm{eq}}}] \overset{\mathrm{def}}{=} \int_{\Gamma_{\mathrm{eq}}}\Big( \frac{1}{2} g^+[\mu^{\Gamma_{\mathrm{eq}}}] + \frac{1}{2} g^-[\mu^{\Gamma_{\mathrm{eq}}}] + 2 V\Big) \, \mathrm{d} \mu^{\Gamma_{\mathrm{eq}}} $$
 
 where $$g^\pm[\mu^{\Gamma_{\mathrm{eq}}}]$$ are the left and right boundary values of the $$g$$-function up to the curve. $$\triangle$$
 
@@ -261,7 +261,7 @@ is the expectation with respect to the "complex measure." If we then integrate u
 
 $$\ln \mathcal{Z}_{N , \Gamma}[V] = \ln \mathcal{Z}_{N , \Gamma}[V_0] - \beta N^2 \int_0^1 \left\langle L_N^{(\mathbf{z})}\Big( \frac{\partial V_t}{\partial t} \Big) \right\rangle_{N, V_t} \, \mathrm{d}t \, . $$
 
-If we take $$V_0$$ to be quadratic then $$\ln \mathcal{Z}_{N , \Gamma}[V_0]$$ can be computed by a Selberg integral and its asymptotics is then known via the asymptotics of the Barnes G-function. Thus our problem reduces to ab asymptotic expansion of $$\left\langle L_N^{(\mathbf{z})}\Big( \frac{\partial V_t}{\partial t} \Big) \right\rangle_{N, V_t}$$, ensuring that our error terms are sufficiently uniform in $$t \in [0,1]$$ that we can integrate them. $$L_N^{(\mathbf{z})}(f) = \frac{1}{N} \sum_{j=1}^N f(z_j)$$ is a linear statistic, hence our problem reduces to the asymptotics of moments (in this case the first moment) of a linear statistic.
+If we take $$V_0$$ to be quadratic then $$\ln \mathcal{Z}_{N , \Gamma}[V_0]$$ can be computed by a Selberg integral and its asymptotics is then known via the asymptotics of the Barnes G-function. Thus our problem reduces to an asymptotic expansion of $$\left\langle L_N^{(\mathbf{z})}\Big( \frac{\partial V_t}{\partial t} \Big) \right\rangle_{N, V_t}$$, ensuring that our error terms are sufficiently uniform in $$t \in [0,1]$$ that we can integrate them. $$L_N^{(\mathbf{z})}(f) = \frac{1}{N} \sum_{j=1}^N f(z_j)$$ is a linear statistic, hence our problem reduces to the asymptotics of moments (in this case the first moment) of a linear statistic.
 
 <h2>Dyson-Schwinger equations</h2>
 
@@ -277,7 +277,7 @@ $$\begin{align*}
 &+ \frac{1}{N}\left( \frac{1}{\beta} - \frac{1}{2}\right) \left\langle \mathrm{Fluct}_N(f_0^\prime) \prod_{p=1}^k \mathrm{Fluct}_N(f_p)  \right\rangle_{N,V}\\
 &+ \frac{1}{\beta} \sum_{q=1}^k \mu^{\Gamma_{\mathrm{eq}}} (f_0 f_q^\prime) \left\langle \prod_{\substack{p=1\\p \neq q}}^k \mathrm{Fluct}_N(f_p)  \right\rangle_{N,V}  \\
 &+ \frac{1}{\beta N} \sum_{q=1}^k  \left\langle \mathrm{Fluct}_N(f_0 f_q^\prime) \prod_{\substack{p=1\\p \neq q}}^k \mathrm{Fluct}_N(f_p)  \right\rangle_{N,V} \\
-&+ \frac{1}{2 N} \left\langle \mathrm{Fluct}_N^{\otimes 2}\Big(\frac{f_0(z) - f_0(w)}{z-w}\Big) \prod_{\substack{p=1\\p \neq q}}^k \mathrm{Fluct}_N(f_p)  \right\rangle_{N,V}
+&+ \frac{1}{2 N} \left\langle \mathrm{Fluct}_N^{\otimes 2}\Big(\frac{f_0(z) - f_0(w)}{z-w}\Big) \prod_{p=1}^k \mathrm{Fluct}_N(f_p)  \right\rangle_{N,V}
 \end{align*} $$
 
 where $$\Xi$$ is the "master operator" which acts by
@@ -331,12 +331,12 @@ In this final section we sketch how to bound $$\frac{ \lvert\mathcal{Z}_{N,\Gamm
 $$\begin{align*}&\mathrm{ph}\left[ \prod_{1 \leq i < j \leq N}(\gamma(x_i) -\gamma(x_j) )^\beta \prod_{k=1}^N \mathrm{e}^{- \beta N V(\gamma(x_k))} \gamma^\prime(x_k)\right] \\
 &= \mathrm{ph}\left[ \prod_{1 \leq i < j \leq N}\left(\frac{\gamma(x_i) -\gamma(x_j)}{x_i - x_j} \right)^\beta \prod_{k=1}^N \mathrm{e}^{- \beta N V(\gamma(x_k))} \gamma^\prime(x_k)\right]\\
 &= \mathrm{ph}\left[ \prod_{i,j=1}^N \left(\frac{\gamma(x_i) -\gamma(x_j)}{x_i - x_j} \right)^\frac{\beta}{2} \prod_{k=1}^{N} \mathrm{e}^{- \beta N  V(\gamma(x_k))} \gamma^{\prime}(x_k)^{1-\frac{\beta}{2}}\right] \\
-&= \exp\left(\frac{i \beta N^2}{2}\int_{\mathbb{R}^2} a \, \mathrm{d}L_N^{(\mathbf{x})}\otimes \mathrm{d}L_N^{(\mathbf{x})} - i \beta N^2 \int_{\mathbb{R}} \Im V \, \mathrm{d}L_N^{(\mathbf{x})} + i N \left( 1-  \frac{\beta}{2}\right) \int_{\mathbb{R}}\arg \, \gamma^\prime \, \mathrm{d}L_N^{(\mathbf{x})} \right)
+&= \exp\left(\frac{i \beta N^2}{2}\int_{\mathbb{R}^2} a \, \mathrm{d}L_N^{(\mathbf{x})}\otimes \mathrm{d}L_N^{(\mathbf{x})} - i \beta N^2 \int_{\mathbb{R}} \Im V\circ \gamma \, \mathrm{d}L_N^{(\mathbf{x})} + i N \left( 1-  \frac{\beta}{2}\right) \int_{\mathbb{R}}\arg \, \gamma^\prime \, \mathrm{d}L_N^{(\mathbf{x})} \right)
 \end{align*}$$
 
 where $$a(x,y) = \arg \, \frac{\gamma(x)-\gamma(y)}{x-y}$$. We observe that 
 
-$$ \frac{ \mathcal{Z}_{N,\Gamma}[V]}{\mathsf{Z}_{N,\gamma}[V]}  = \mathbb{E}_{N,V}\left[ \mathrm{e}^{\frac{i \beta N^2}{2}\int_{\mathbb{R}^2} a \, \mathrm{d}L_N^{(\mathbf{x})}\otimes \mathrm{d}L_N^{(\mathbf{x})} - i \beta N^2 \int_{\mathbb{R}} \Im V \, \mathrm{d}L_N^{(\mathbf{x})} + i N \left( 1-  \frac{\beta}{2}\right) \int_{\mathbb{R}}\arg \, \gamma^\prime \, \mathrm{d}L_N^{(\mathbf{x})} }\right] \, .$$
+$$ \frac{ \mathcal{Z}_{N,\Gamma}[V]}{\mathsf{Z}_{N,\gamma}[V]}  = \mathbb{E}_{N,V}\left[ \mathrm{e}^{\frac{i \beta N^2}{2}\int_{\mathbb{R}^2} a \, \mathrm{d}L_N^{(\mathbf{x})}\otimes \mathrm{d}L_N^{(\mathbf{x})} - i \beta N^2 \int_{\mathbb{R}} \Im V \circ \gamma \, \mathrm{d}L_N^{(\mathbf{x})} + i N \left( 1-  \frac{\beta}{2}\right) \int_{\mathbb{R}}\arg \, \gamma^\prime \, \mathrm{d}L_N^{(\mathbf{x})} }\right] \, .$$
 
 Now, let us recall that the equilibrium measure for the real model is just the pullback of the equilibrium measure $$\mu_{\mathrm{eq}}$$ under $$\gamma$$. Let us call this equilibrium measure $$\nu_{\mathrm{eq}}$$. Let us now centre our empirical measure, $$L_N^{(\mathbf{x})} = \nu_{\mathrm{eq}} +  (L_N^{(\mathbf{x})} - \nu_{\mathrm{eq}}) $$. Then 
 
@@ -357,7 +357,7 @@ $$\int_K \mathcal{Q} \, \mathrm{d}(L_N^{(\mathbf{x})}- \nu_{\mathrm{eq}}) = 0 \,
 
 Thus
 
-$$\begin{align*} \frac{ |\mathcal{Z}_{N,\Gamma}[V]|}{\mathsf{Z}_{N,\gamma}[V]}  &=  (1+ \mathcal{O}(\mathrm{e}^{-NC})) \mathbb{E}_{N,V}^K \left[ \mathrm{e}^{\frac{i \beta}{2}\int_{K^2} a \, \mathrm{d}\mathrm{Fluct}_N \otimes \mathrm{d}\mathrm{Fluct}_N  + i \left( 1-  \frac{\beta}{2}\right) \int_{K}\arg \, \gamma^\prime \, \mathrm{d}\mathrm{Fluct}_N }\right] \, .\end{align*}$$
+$$\begin{align*} \frac{ |\mathcal{Z}_{N,\Gamma}[V]|}{\mathsf{Z}_{N,\gamma}[V]}  &=  (1+ \mathcal{O}(\mathrm{e}^{-NC})) \lvert \mathbb{E}_{N,V}^K \left[ \mathrm{e}^{\frac{i \beta}{2}\int_{K^2} a \, \mathrm{d}\mathrm{Fluct}_N \otimes \mathrm{d}\mathrm{Fluct}_N  + i \left( 1-  \frac{\beta}{2}\right) \int_{K}\arg \, \gamma^\prime \, \mathrm{d}\mathrm{Fluct}_N }\right] \rvert \, .\end{align*}$$
 
 where $$\mathrm{Fluct}_N = N (L_N^{(\mathbf{x})}- \nu_{\mathrm{eq}})$$. We know from an analysis of the real model that $$\mathrm{Fluct}_N(f)$$ is asymptotically Gaussian for a smooth bounded function $$f$$. Thus, morally, what we have is 
 

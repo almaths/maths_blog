@@ -12,7 +12,7 @@ A celebrated result in the theory of random matrices is the connection between t
 
 The Gaussian Unitary Ensemble (GUE) is an ensemble of $$n \times n$$ Hermitian random matrices with probability density
 
-$$\frac{1}{Z_{\mathrm{GUE}}} \mathrm{e}^{- \frac{1}{2} \mathrm{tr}(H^2)} $$
+$$\frac{1}{Z_{\mathrm{GUE}}} \mathrm{e}^{-  \mathrm{tr}(H^2)} $$
 
 $$Z_{\mathrm{GUE}}$$ is a normalisation constant. We are interested in the distribution of the extremal (rightmost) eigenvalue. A famous result (see Chapter 24 of Mehta's *Random Matrices*) shows that the cumulative distribution function converges, under an appropriate scaling, to the Fredholm determinant of the *Airy kernel.* Let $$\lambda_n$$ be the rightmost eigenvalue.
 
@@ -98,11 +98,11 @@ Next we use the identity $$[D,(1-K_t)^{-1}] = (1-K_t)^{-1} [D,K_t] (1-K_t)^{-1}$
 
 **Exercise:** Let $$\phi \in L^2(\mathbb{R}_+)$$ be a sufficiently nice function (e.g. continuously differentiable and $$\phi^\prime \in L^2(\mathbb{R}_+)$$). Then
 
-$$([D,K_t]\phi)(x) = - ((\tau_t A \otimes \tau_t A)\phi)(x) - \phi(0) K_t(x,0) .$$
+$$([D,K_t]\phi)(x) = - ((\tau_t A \otimes \tau_t A)\phi)(x) + \phi(0) K_t(x,0) .$$
 
 This yields the formula
 
-$$(\ast \ast) = p_{n+1}(t)- p_0(t)p_n(t)-q_n(t)((1-K_t)^{-1} K_t \tau_t A)(0) .$$
+$$(\ast \ast) = p_{n+1}(t)- p_0(t)p_n(t)+q_n(t)((1-K_t)^{-1} K_t \tau_t A)(0) .$$
 
 Using that $$(1-K_t)^{-1} K_t = (1-K_t)^{-1} - 1$$, we obtain a formula for $$\frac{\mathrm{d}}{\mathrm{d}t} p_n(t)$$. We thus obtain an infinite hierarchy of coupled ODEs, $$n \in \mathbb{N}$$,
 
